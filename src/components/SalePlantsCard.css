@@ -1,0 +1,94 @@
+.sale-plants-card__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-3xl);
+    background-color: var(--color-muted);
+    padding: var(--space-md);
+}
+.sale-plants-card__container:hover{
+    scale: 1.03;
+}
+.sale-plants-card__image-container{
+    width: 100%;
+    min-width: var(--width-xl);
+    position: relative;
+}
+.sale-plants-card__image{
+    width: 100%;
+    aspect-ratio: 16 / 12;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    position: relative;
+}
+.sale-plants-card__header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    font-size: var(--font-size-2xl);
+}
+.sale-plants-card__title{
+    font-weight: bold;
+    font-size: var(--font-size-2xl);
+}
+.sale-plants-card__description{
+    font-size: var(--font-size-lg-xl);
+    color: rgb(0 0 0 / 0.4);
+}
+.sale-plants-card__price{
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+}
+.sale-plants-card__button-link-container{
+    position: absolute;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    width: var(--height-2xs);
+    height: var(--height-2xs);
+    border-radius: calc(var(--radius-3xl) * 2);
+    background-color: black;
+    border: 0;
+}
+.sale-plants-card__button-link-container:hover{
+    scale: 1.03;
+}
+.sale-plants-card__button-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    color: white;
+    font-size: var(--font-size-3xl);
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
+.sale-plants-card__button-like-container{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 75px;
+    height: 75px;
+}
+.sale-plants-card__button-like-container:hover{
+    scale: 1.03;
+}
+
+.sale-plants-card__button-like{
+    border: 0;
+    font-size: 40px;
+    background-color: rgb(255 255 255 / 0.6);
+    color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    border: 2px solid white;
+    cursor: pointer;
+
+}

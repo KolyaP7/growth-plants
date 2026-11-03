@@ -1,0 +1,98 @@
+.article-card{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    min-height: var(--height-md);
+    max-height: calc(var(--height-max) * 1.2);
+    max-width: calc(var(--width-max) * 1.5);
+}
+.article-card:hover{
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.article-card__image-container{
+    width: 100%;
+}
+.article-card__image{
+    width: 100%;
+    aspect-ratio: 16 / 12;
+    object-fit: cover;
+}
+.article-card__header{
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    justify-content: flex-start;
+}
+.article-card__avatar-container{
+    max-width: 10%;
+}
+.article-card__avatar-image{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius-full);
+}
+.article-card__author{
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+}
+.article-card__date{
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-extralight);
+}
+.article-card__title-container{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+}
+.article-card__title{
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-sm);
+}
+.article-card__description-container{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+}
+.article-card__description{
+    text-wrap: wrap;
+    height: 100%;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-extralight);
+    line-height: var(--line-height-lg);
+}
+
+.article-card__button-link{
+    width: 45%;
+    height: var(--button-height-xs);
+    background-color: var(--color-muted);
+    border: 0;
+}
+.article-card__link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+}
+.article-card__button-link:hover{
+    background-color: black;
+}
+.article-card__link:hover{
+    color: white;
+}

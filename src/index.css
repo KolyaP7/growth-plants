@@ -1,0 +1,49 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Urbanist';
+  position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+image,
+a,
+button{
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-weight: var(--font-weight-black);
+}
+h2,
+h3 {
+  font-weight: var(--font-weight-semibold);
+}
+p {
+  font-weight: var(--font-weight-regular);
+}
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-medium);
+}
+
+.section{
+  width: 95vw;
+  margin: 0 auto;
+  position: relative;
+  background-color: white;
+  padding: var(--space-xs);
+  margin-top: calc(var(--space-2xl));
+}

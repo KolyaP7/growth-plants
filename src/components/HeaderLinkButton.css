@@ -1,0 +1,29 @@
+.HeaderLinkButton{
+    width: var(--button-width-lg);
+    height: var(--button-height-sm);
+}
+
+
+.HeaderLinkButton__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: var(--border-width-thin) solid white;
+    border-radius: var(--radius-3xl);
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+}
+
+.HeaderLinkButton__link:hover{
+    color: black;
+    background-color: white;
+}
+
+.HeaderLinkButton__link--active{
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,17 @@
+.header-container{
+    /* background-color: var(--color-accent); */
+    background-image: url(../../public/Glossy-Forest-Green-Gradient-Banner.png);
+    height: calc(var(--height-2xs) * 1.6);
+    top: calc(var(--space-xs) - 2px);
+    width: calc(97% + 2px);
+    margin: 0 auto;
+    position: sticky;
+    border-radius: var(--radius-full);
+    z-index: 999;
+}
+.header-container :nth-child(1){
+    left: 0 !important;
+    right: 0 !important;
+    backdrop-filter: blur(0px) !important;
+
+}

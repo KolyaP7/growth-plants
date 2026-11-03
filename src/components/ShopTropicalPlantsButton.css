@@ -1,0 +1,41 @@
+.shop-tropical-plants{
+    position: absolute;
+    bottom: 0;
+    right: var(--space-2xs);
+    height: var(--button-height-md);
+    width: var(--button-width-3xl);
+    
+}
+
+.shop-tropical-plants__button{
+    border: var(--border-width-medium) solid black;
+    border-radius: var(--radius-xl);
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 0 30px white;
+    padding: 0;
+    margin: 0;
+    color: black;
+}
+.shop-tropical-plants__button:hover{
+    background-color: black;
+    color: white;
+}
+.shop-tropical-plants__link:hover{
+    color: white;
+}
+.shop-tropical-plants__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-medium);
+
+}

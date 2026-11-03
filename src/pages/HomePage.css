@@ -1,0 +1,254 @@
+/* SECTION HERO */
+.hero{
+    position: relative;
+    background-image: url(../../public/tropical-green-leaves-background.jpg);
+    background-size: cover;
+    /* background-color: rgb(127, 214, 255); */
+    height: 95vh;
+    color: white;
+    width: 100%;
+    margin: 0 !important;
+}
+.header-space{
+    height: calc(var(--button-height-sm) * 1.25);
+    padding: var(--space-md);
+}
+.hero__title{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 15%;
+    margin: 5% 0;
+}
+
+.hero__h1-title{
+    font-weight: var(--font-weight-black);
+    text-transform: uppercase;
+    align-self: center;
+    font-size: calc(var(--font-size-lg) * 14);
+}
+.hero__h2-title{
+    font-size: calc(var(--font-size-2xl) * 2);
+}
+.hero__h6-title{
+    align-self: flex-end;
+    font-size: var(--font-size-2xl);
+    text-wrap: wrap;
+    max-width: calc(var(--width-2xs) * 17);
+}
+/* ADDITION INFORMATION */
+.hero__addition-information{
+    position: absolute;
+    bottom: var(--space-sm);
+    left: var(--space-sm);
+    display: flex;
+    justify-content: space-between;
+    height: var(--height-md);
+    margin: 0;
+    max-width: var(--width-3);
+
+
+}
+.hero__addition-information-selector{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    background-color: rgb(0 0 0 / 0.2);
+    backdrop-filter: blur(400px);
+    border-radius: var(--radius-3xl);
+    border: var(--border-width-medium) solid white;
+    padding: var(--space-md);
+}
+
+.hero__addition-information-selector-text{
+    flex: 3;
+}
+.hero__addition-information-image{
+    position: absolute;
+    width: var(--width-xs);
+    right: var(--space-md);
+    top: var(--space-lg);
+}
+.hero__addition-information-selector-images{
+    position: relative;
+    filter: hue-rotate(355deg);
+    flex: 1;
+}
+.hero__addition-information-selector-images img:nth-child(2){
+    z-index: 2;
+    top: calc(var(--space-xl) * 1.25);
+}
+.hero__addition-information-selector-images img:nth-child(3){
+    top: calc(var(--space-xl) * 2.0);
+}
+
+.hero__addition-information-h3-title{
+    font-size: var(--font-size-3xl);
+}
+.hero__addition-information-text{
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+}
+/* SECTION PLANTS FOR PEOPLE */
+.plants-for-people{
+    position: relative;
+    background-color: white;
+    color: black;
+}
+.plants-for-people :nth-child(n){
+    margin-bottom: var(--space-lg);
+}
+.plants-for-people :last-child{
+    margin-bottom: 0;
+}
+
+.plants-for-people__header{
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    height: var(--height-xl);
+    margin-bottom: calc(var(--space-xl) * 4);
+
+}
+.plants-for-people__information-section{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-wrap: wrap;
+    margin: 0 !important;
+}
+.plants-for-people__title{
+    font-size: calc(var(--font-size-2xl) * 2);
+    line-height: var(--line-height-xs);
+    font-weight: var(--font-weight-black);
+    margin: 0 !important;
+}
+.plants-for-people__text{
+    font-size: var(--font-size-lg);
+}
+.plants-for-people__video-section{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin: 0 !important;
+
+}
+.plants-for-people__video-wrapper{
+    background: transparent;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    height: 90%;
+}
+.plants-for-people__video{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    object-fit: cover;
+}
+.plants-for-people__description-section{
+    display: flex;
+    flex: 2;
+}
+
+.plants-for-people__description{
+    font-size: var(--font-size-3xl);
+    text-wrap: wrap;
+    margin: 0;
+    line-height: var(--line-height-lg);
+    font-weight: var(--font-weight-semibold);
+}
+.plants-for-people__description-image{
+    vertical-align: middle;
+    margin: 0 var(--space-md);
+    width: var(--button-width-sm);
+    object-fit: cover;
+    display: inline;
+    padding: 0;
+}
+.plants-for-people__actions{
+    margin-top: var(--space-xl);
+    display: flex;
+}
+.plants-for-people__actions :nth-child(5){
+    position: absolute;
+    right: calc(var(--space-xl) * 2);
+}
+
+.plants-for-people__cards{
+    height: calc(var(--space-xl) * 10);
+    width: 100%;
+}
+.plants-for-people__cards-group{
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* SECTION  NEW PLANTS */
+.new-plants{
+    position: relative;
+    background-color: white;
+    color: black;
+}
+.new-plants__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.new-plants__header-title{
+    font-size: calc(var(--font-size-3xl) * 3);
+    flex: 5;
+
+}
+.new-plants__header-text{
+    font-size: var(--font-size-lg);
+    flex: 4;
+
+}
+.new-plants__cards{
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+    width: 100%;
+}
+
+/* SECTION INDOOR COLLECTION */
+.indoor-collection{
+    position: relative;
+    color: black;
+}
+.indoor-collection__header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-xs);
+}
+.indoor-collection__header-title{
+    text-align: center;
+    font-size: calc(var(--font-size-2xl) * 5);
+}
+
+.indoor-collection__row{
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+    margin-bottom: 1%;
+}
+.indoor-collection__cards :nth-child(1) :nth-child(1) {
+    flex: 2;
+}
+.indoor-collection__cards :nth-child(1) :nth-child(2) {
+    flex: 1;
+}
+.indoor-collection__cards :nth-child(2) :nth-child(1) {
+    flex: 1;
+}
+.indoor-collection__cards :nth-child(2) :nth-child(2) {
+    flex: 2;
+}
