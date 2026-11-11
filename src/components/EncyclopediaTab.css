@@ -1,0 +1,8 @@
+.encyclopedia-tab__link{
+    text-decoration: none;
+    color: black;
+}
+
+.encyclopedia-tab__link:hover{
+    color: var(--color-bright-emerald);
+}

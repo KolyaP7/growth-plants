@@ -1,5 +1,7 @@
 *{
   box-sizing: border-box;
+  font-family: 'Urbanist';
+
 }
 
 body{
@@ -19,7 +21,8 @@ h6,
 p,
 image,
 a,
-button{
+button,
+ul{
   margin: 0;
   padding: 0;
 }
@@ -46,4 +49,8 @@ h6 {
   background-color: white;
   padding: var(--space-xs);
   margin-top: calc(var(--space-2xl));
+}
+.header-space{
+    height: calc(var(--button-height-sm) * 1.25);
+    padding: var(--space-md);
 }

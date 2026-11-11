@@ -1,0 +1,174 @@
+/* featured plants section */
+.featured-plants{
+    position: relative;
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 95%;
+    height: var(--section-height-2xs);
+}
+.featured-plants__header-title{
+    font-size: var(--font-size-2xl);
+}
+.featured-plants__header-text{
+    font-size: var(--font-size-lg-xl);
+    cursor: pointer;
+}
+.featured-plants__header-text:hover{
+    color: var(--color-caramel);
+    text-decoration: underline;
+}
+
+.featured-plants__header{
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-pine);
+}
+.featured-plants__cards{
+    display: flex;
+    justify-content: flex-start;
+    gap: 2%;
+    height: calc(var(--height-2xl) * 1.5);
+    width: 100%;
+
+}
+.featured-plants__button-to-right-container{
+    position: absolute;
+    right: 0;
+    top: calc(var(--height-2xl) * 1.5 / 2);
+    width: var(--width-xs);
+    height: var(--width-xs);
+}
+.featured-plants__button-to-right{
+    font-size: var(--font-size-xl);
+    border-radius: var(--radius-full);
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: var(--color-bright-emerald);
+    border: 0;
+}
+.featured-plants__button-to-right:hover{
+    background-color: var(--color-caramel);
+    color: white;
+}
+
+/* SEARCH SECTION */
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-pale-green);
+    width: 100%;
+    height: calc(var(--section-height-2xs) / 2.5);
+    margin: 0 !important;
+}
+.search-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    height: var(--height-2xs);
+    gap: 2%;
+}
+.search__item{
+    border: 2px solid var(--color-pine);
+    border-radius: 0;
+    color: var(--color-pine);
+    height: 100%;
+    font-size: var(--font-size-2xl);
+
+}
+.search__filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+.search__filter:hover{
+    background-color: var(--color-caramel);
+    color: white;
+    border: 0;
+}
+.search__search-field{
+    width: 100%;
+}
+.search__input{
+    background-color: white;
+    color: inherit;
+    font-size: inherit;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    padding: var(--space-lg);
+    font-weight: var(--font-weight-extralight) !important;
+}
+.search__input:focus{
+    outline: 2px solid var(--color-caramel);
+    background-color: var(--color-caramel);
+    color: white;
+}
+.search__input:focus::placeholder{
+    font-weight: var(--font-weight-extralight) !important;
+    color: white;
+}
+.search__search-button-container{
+    border: 0 !important;
+    aspect-ratio: 1 / 1;
+}
+.search__search-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: var(--color-pine);
+    color: white;
+    font-size: inherit;
+    cursor: pointer;
+}
+.search__search-button:hover{
+    background-color: var(--color-caramel);
+}
+
+/* colorful-new-arrivals section */
+
+.colorful-new-arrivals{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10%;
+    width: 95%;
+    height: var(--section-height-2xs);
+    margin-bottom: calc(var( --space-xl) * 3);
+}
+
+.colorful-new-arrivals__header{
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-pine);
+}
+.colorful-new-arrivals__header-title{
+    font-size: var(--font-size-2xl);
+}
+.colorful-new-arrivals__header-text{
+    font-size: var(--font-size-lg-xl);
+    cursor: pointer;
+}
+.colorful-new-arrivals__header-text:hover{
+    color: var(--color-caramel);
+    text-decoration: underline;
+}
+.colorful-new-arrivals__cards{
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+    height: calc(var(--height-2xl) * 1.3)
+}

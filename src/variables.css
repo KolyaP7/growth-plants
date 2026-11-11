@@ -2,6 +2,73 @@
     /* --color-accent: rgb(113, 151, 112); */
     --color-accent: #a6b6a6;
     --color-muted: rgb(0 0 0 / 0.1);
+
+    /* 01–06 | Deep Forest */
+    --color-forest: #102A20;
+    --color-deep-forest: #091C15;
+    --color-dark-green: #19382A;
+    --color-pine: #244A37;
+    --color-jungle: #315B43;
+    --color-moss: #456B50;
+
+    /* 07–12 | Botanical Green */
+    --color-leaf: #527C58;
+    --color-sage: #78977A;
+    --color-soft-sage: #A2B99E;
+    --color-light-sage: #C5D5BF;
+    --color-mint: #D9E9D6;
+    --color-pale-green: #EDF4E9;
+
+    /* 13–18 | Natural Neutrals */
+    --color-cream: #F7F5EF;
+    --color-warm-white: #FCFBF7;
+    --color-pure-white: #FFFFFF;
+    --color-sand: #E8E1D3;
+    --color-beige: #D5C9B5;
+    --color-stone: #B8B4A7;
+
+    /* 19–23 | Earthy Accents */
+    --color-terracotta: #B9785C;
+    --color-clay: #CC9274;
+    --color-caramel: #B28A5A;
+    --color-olive: #858B55;
+    --color-golden-leaf: #C1A66B;
+
+    /* 24–27 | Botanical Details */
+    --color-eucalyptus: #91AAA0;
+    --color-seafoam: #B5D0C3;
+    --color-fern: #64846A;
+    --color-lime-leaf: #A8B978;
+
+    /* 28–30 | Typography & Borders */
+    --color-text-primary: #17231B;
+    --color-text-secondary: #68766A;
+    --color-border: #D8DED5;
+
+  /* 31–42 | Tropical Bright Colors */
+
+    /* Emerald */
+    --color-bright-emerald: #00A86B;
+    --color-vivid-emerald: #00C878;
+    --color-deep-emerald: #007F5F;
+
+    /* Tropical Green */
+    --color-tropical-green: #00B84A;
+    --color-neon-green: #39E600;
+    --color-lime-green: #A8E629;
+
+    /* Jungle Green */
+    --color-jungle-bright: #168F45;
+    --color-fern-bright: #45C96B;
+
+    /* Turquoise & Aqua */
+    --color-tropical-teal: rgb(0, 127, 120);
+    --color-bright-teal: #00BFA5;
+    --color-aqua-green: #36D6B0;
+
+    /* Fresh Leaf */
+    --color-fresh-leaf: #C1F05A;
+
     /* Ширина по 12 колоночной сетке: */
     --width-1: 8.333333%;  /* 1 / 12 */
     --width-2: 16.666667%; /* 2 / 12 */
@@ -46,7 +113,6 @@
     --button-width-md: 175px;
     --button-width-lg: 200px;
     --button-width-3xl: 450px;
-    
     --button-height-xs: 40px;
     --button-height-sm: 60px;
     --button-height-md: 115px;
@@ -105,4 +171,7 @@
     --border-width-medium: 2px;
     --border-width-thick: 3px;
     --border-width-extra-thick: 4px;
+
+    /* Encyclopedia */
+    --color-main-dark: rgb(20, 20, 20);
 }

@@ -9,31 +9,17 @@ export default function Header(){
     const sentinelRef = useRef<HTMLDivElement | null>(null);
     const [isStuck, setIsStuck] = useState(false);
 
+     const [isScrolled, setIsScrolled] = useState(false);
+
     useEffect(() => {
-        const sentinel = sentinelRef.current;
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
 
-        if (!sentinel) {
-            return;
-        }
+        window.addEventListener('scroll', handleScroll);
 
-        const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (!entry) return;
-
-            // Sentinel ушёл из viewport — header прилип.
-            setIsStuck(!entry.isIntersecting);
-        },
-        {
-            threshold: 0,
-            rootMargin: "-12px 0px 0px 0px",
-        }
-        );
-
-        observer.observe(sentinel);
-
-        // Важно: отключаем observer при удалении компонента.
         return () => {
-            observer.disconnect();
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
@@ -41,26 +27,33 @@ export default function Header(){
         <>
         <div ref={sentinelRef} className="header-sentinel" aria-hidden="true" />
         <header>
-            <div className={`header ${isStuck ? 'header--stuck' : ''}`}>
+            <div className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
                 <div className="header__section header__section--left-side">
                     <div className="header__logo">
                         <LogoSmallCircle></LogoSmallCircle>
                     </div>
+                    <h3 className="header__title">Growth <br></br> <span className="header__description">World of plants</span>
+                    </h3>
                     <HeaderLinkButton
                     title="Home"
                     link="/"
                     ></HeaderLinkButton>
                     <HeaderLinkButton
+                    title="Encyclopedia"
+                    link="/encyclopedia">
+                    </HeaderLinkButton>
+                    <HeaderLinkButton
+                    title="Blog"
+                    link="/blog">
+                    </HeaderLinkButton>
+                    <HeaderLinkButton
                     title="Contact"
                     link="/contacts"
                     ></HeaderLinkButton>
-                    <HeaderLinkButton
-                    title="Blog" 
-                    link="/blog">
-                    </HeaderLinkButton>
+                    
                 </div>
                 <div className="header__section header__section--right-side">
-                    <div className="header__search">S</div>
+                    <div className="header__search">⌕</div>
                     <HeaderLinkButton 
                     title="Shop" 
                     link="/shop"

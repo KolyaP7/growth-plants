@@ -9,10 +9,7 @@
     width: 100%;
     margin: 0 !important;
 }
-.header-space{
-    height: calc(var(--button-height-sm) * 1.25);
-    padding: var(--space-md);
-}
+
 .hero__title{
     display: flex;
     flex-direction: column;

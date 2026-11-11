@@ -26,22 +26,26 @@
     display: flex;
     justify-content: flex-end;
     position: relative;
-    width: calc(var(--width-3xl) * 2.5);
-    max-height: var(--height-3xl);
+    width: calc(var(--width-3xl) * 2.25);
+
 }
 .contacts-page-about-as__image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: var(--radius-full) 0 var(--radius-full) var(--radius-full);
     overflow: hidden;
     position: absolute;
     z-index: 2;
+    aspect-ratio: 16 / 9;
     width: 100%;
     height: 100%;
-    background-color: var(--color-accent);
+    background-color: var(--color-jungle);
     opacity: 1;
 }
 .contacts-page-about-as__image{
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
     z-index: 2;
 }
@@ -59,10 +63,54 @@
 
 }
 .contacts-page-about-as__dote{
-    width: var(--width-3xs);
-    height: var(--height-3xs);
+    width: calc(var(--width-3xs) / 1.5);
+    height: calc(var(--height-3xs) / 1.5);
     border-radius: var(--radius-full);
     background-color: var(--color-muted);
     z-index: 0;
     inset: 0;
+}
+
+/* SECTION FEEDBACK */
+
+.contacts-page-feedback{
+    display: flex;
+    align-items: center;
+    height: calc(var(--section-height-2xs) / 1.25);
+    width: 100vw;
+    background-color: var(--color-pale-green);
+    /* background-color: var(--color-jungle-bright); */
+
+
+}
+.contacts-page-feedback__cards{
+    width: 80%;
+    height: var(--height-xl);
+    margin: 0 auto;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+}
+.contacts-page-feedback__decoration{
+}
+.contacts-page-feedback__decoration-image{
+    max-height: 200px;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CONTACT US */
+.contacts-page-assist{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(var(--height-max) * 1.25);
+    width: 70%;
+    margin: 0 auto;
+    padding: var(--space-xl);
+}
+.contacts-page-assist__title{
+    font-size: calc(var(--font-size-3xl) * 1.1);
+    max-width: 50%;
 }

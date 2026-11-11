@@ -1,0 +1,57 @@
+.feedback-card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-md);
+    align-items: flex-start;
+    background-color: white;
+    width: 100%;
+    flex: 1;
+    height: 100%;
+    border-radius: var(--radius-md);
+}
+.feedback-card-container:hover{
+    box-shadow: 0 4px 16px rgba(0, 150, 136, 0.18);
+    border: 2px solid rgba(0, 150, 136, 0.4);
+}
+.feedback-card__author{
+    display: flex;
+    justify-content: flex-start;
+    gap: 3%;
+    width: 100%;
+}
+.feedback-card__author-information{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15%;
+}
+.feedback-card__author-region{
+    font-weight: var(--font-weight-extralight);
+    font-size: var(--font-size-xs);
+    text-wrap: none;
+}
+.feedback-card__author-name{
+    font-weight: var(--font-weight-black);
+    font-size: var(--font-size-sm);
+}
+.feedback-card__text{
+    line-height: var(--line-height-3xl);
+    color: black;
+    width: 100%;
+}
+.feedback-card__date{
+    align-self: flex-end;
+}
+.feedback-card__avatar-container{
+    max-width: calc(var(--width-2xs) * 1.25);
+    max-height: calc(var(--width-2xs) * 1.25);
+    aspect-ratio: 1 / 1;
+}
+.feedback-card__avatar-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-full);
+}

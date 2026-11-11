@@ -4,7 +4,7 @@ import PlantsForPeopleButton from '../components/PlantsForPeopleButton.tsx';
 import PlantsForPeopleCard from '../components/PlantsForPeopleCard.tsx';
 import SalePlantsCard from '../components/SalePlantsCard.tsx';
 import IndoorCollectionCard from '../components/IndoorCollectionCard.tsx';
-import FooterSection from '../components/FooterSection.tsx';
+import FooterSectionVer2 from '../components/FooterSectionVer2.tsx';
 import './HomePage.css';
 import { useState } from 'react';
 
@@ -217,7 +217,7 @@ export default function HomePage(){
                 
             </div>
         </section>
-        <FooterSection></FooterSection>
+        <FooterSectionVer2></FooterSectionVer2>
         </>
     )
 }

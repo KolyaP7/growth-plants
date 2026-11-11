@@ -1,11 +1,16 @@
 import HeaderWrapper from '../components/HeaderWrapper.tsx';
-import FooterSection from '../components/FooterSection.tsx';
+import Header from '../components/Header.tsx';
+import FeedbackCard from '../components/FeedbackCard.tsx';
+import FooterSectionVer2 from '../components/FooterSectionVer2.tsx';
+import InputArea from '../components/InputArea.tsx';
 
 import './ContactsPage.css';
 export default function ContactsPage(){
     return (
         <>
-        <HeaderWrapper></HeaderWrapper>
+        <Header></Header>
+        <div className="header-space"></div>
+
         <section className="section contacts-page-about-as">
             <div className="contacts-page-about-as__content">
                 <h1 className="contacts-page-about-as__title">GROWTH - The Place to Learn, Shop, and Grow Together</h1>
@@ -22,7 +27,7 @@ Let’s learn, share, and grow together.</p>
             <div className="contacts-page-about-as__image-field">
 
                 <div className="contacts-page-about-as__image-container">
-                    <img className="contacts-page-about-as__image" src="../../public/logo/logo.png" alt="Contacts Page Image"/>
+                    <img className="contacts-page-about-as__image" src="../../public/logo/Growth-Floral-Emblem.png" alt="Contacts Page Image"/>
                 </div>
                 <div className="contacts-page-about-as__dotes-container">
                     <div className="contacts-page-about-as__dote"></div>
@@ -1303,7 +1308,40 @@ Let’s learn, share, and grow together.</p>
                 
             </div>
         </section>
-        <FooterSection></FooterSection>
+        <section className="section contacts-page-feedback">
+            {/* <div className="contacts-page-feedback__decoration">
+                <img className="contacts-page-feedback__decoration-image" src="../../public/decoration1.png"></img>
+            </div> */}
+            <div className="contacts-page-feedback__cards">
+                <FeedbackCard
+                authorName="ChiChi"
+                authorAvatarLink="../../public/blog-avatar/06.png"
+                region="South Africa"
+                feedback="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur justo quis euismod vehicula. Quisque diam dui, imperdiet et"
+                date="14.01.2026"></FeedbackCard>
+                <FeedbackCard
+                authorName="ChiChi"
+                authorAvatarLink="../../public/blog-avatar/07.png"
+                region="South Africa"
+                feedback="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur justo quis euismod vehicula. Quisque diam dui, imperdiet et"
+                date="14.01.2026"></FeedbackCard>
+                <FeedbackCard
+                authorName="ChiChi"
+                authorAvatarLink="../../public/blog-avatar/08.png"
+                region="South Africa"
+                feedback="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur justo quis euismod vehicula. Quisque diam dui, imperdiet et"
+                date="14.01.2026"></FeedbackCard>
+            </div>
+            {/* <div className="contacts-page-feedback__decoration">
+                <img className="contacts-page-feedback__decoration-image" src="../../public/decoration3.png"></img>
+            </div> */}
+        </section>
+        <section className="section contacts-page-assist">
+            <h1 className="contacts-page-assist__title">Get Started
+Get in touch with us. We're here to assist you.</h1>
+            <InputArea></InputArea>
+        </section>
+        <FooterSectionVer2></FooterSectionVer2>
         </>
 
     );

@@ -8,7 +8,7 @@
     padding: var(--space-xl);
 }
 .indoor-collection__card-container:hover{
-    scale: 1.03;
+    scale: 1.02;
 }
 
 .indoor-collection__card-main{

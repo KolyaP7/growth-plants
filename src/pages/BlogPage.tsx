@@ -5,11 +5,12 @@ import PostCard from '../components/PostCard.tsx';
 import AdditionArticleCard from '../components/AdditionArticleCard.tsx';
 import './BlogPage.css';
 import Footer from '../components/FooterSection.tsx';
-import FooterSection from '../components/FooterSection.tsx';
+import FooterSectionVer2 from '../components/FooterSectionVer2.tsx';
 export default function BlogPage(){
     return (
         <>
-        <HeaderWrapper></HeaderWrapper>
+        <Header></Header>
+        <div className="header-space"></div>
         <section className="section blog-page-title">
             <h1 className="blog-page-title__title">Exploring New Articles</h1>
             <p className="blog-page-title__description">Dive into a world of insights, ideas, and inspiration. Stay updated with the latest trends shaping our present and future. </p>
@@ -90,7 +91,7 @@ export default function BlogPage(){
             </aside>
 
         </section>
-        <FooterSection></FooterSection>
+        <FooterSectionVer2></FooterSectionVer2>
         </>
     );
 }

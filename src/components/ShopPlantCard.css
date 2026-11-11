@@ -1,0 +1,104 @@
+.shop-plant-card-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: var(--width-2);
+    min-width: var(--width-xl);
+    max-width: calc(var(--width-xl) * 2.5);
+    height: calc(var(--height-2xl) * 1.2);
+    gap: 5%;
+    overflow: hidden;
+}
+.shop-plant-card-container:hover{
+    box-shadow: 6px 6px var(--color-leaf);
+    scale: 1.02;
+
+}
+.shop-plant-card__image-container{
+    width: 100%;
+    height: 65%;
+    max-height: calc(var(--height-2xl) * 1.2);
+    /* flex: 3; */
+}
+.shop-plant-card__image{
+    max-height: calc(var(--height-2xl) * 1);
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+}
+
+/* CARD CONTENT */
+.shop-plant-card__content{
+    position: absolute;
+    bottom: 0;
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 18%;
+    background-color: rgb(255 255 255 / 0.4);
+    backdrop-filter: blur(600px);
+}
+
+/* CARD HEADER */
+.shop-plant-card__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-pine);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-lg);
+    width: 100%;
+}
+.shop-plant-card__title,
+.shop-plant-card__price{
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+
+/* CARD FOOTER */
+/* POT CIRCLES */
+.shop-plant-card__footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    gap: 30%;
+}
+.shop-plant-card__pot{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.shop-plant-card__pot-title{
+    font-weight: var(--font-weight-extralight);
+    font-size: var(--font-size-md);
+}
+
+.shop-plant-card__pot-colors{
+    display: flex;
+    gap: 5%;
+}
+.shop-plant-card__pot-circle{
+    width: var(--width-3xs);
+    height: var(--height-3xs);
+    border-radius: var(--radius-full);
+}
+/* BUY BUTTON */
+.shop-plant-card__buy-button{
+    width: var(--button-width-sm);
+    height: calc(var(--button-height-sm) / 1.5);
+    border: 0;
+    color: white;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-regular);
+    background-color: var(--color-pine);
+}
+
+.shop-plant-card__buy-button:hover{
+    background-color: var(--color-caramel);
+}

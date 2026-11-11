@@ -3,7 +3,6 @@
     height: var(--button-height-sm);
 }
 
-
 .HeaderLinkButton__link{
     display: flex;
     justify-content: center;
