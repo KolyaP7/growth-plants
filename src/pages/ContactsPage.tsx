@@ -1,14 +1,41 @@
 import HeaderWrapper from '../components/HeaderWrapper.tsx';
 import Header from '../components/Header.tsx';
+import SmallHeader from '../components/SmallHeader.tsx';
 import FeedbackCard from '../components/FeedbackCard.tsx';
 import FooterSectionVer2 from '../components/FooterSectionVer2.tsx';
 import InputArea from '../components/InputArea.tsx';
+import FeedbackCarousel from '../components/FeedbackCarousel.tsx';
+import { useEffect, useState } from 'react';
+import type { User } from '../types.tsx';
 
 import './ContactsPage.css';
-export default function ContactsPage(){
+
+interface ContactsPageProps{
+    user: User | null,
+    ColorTheme: String;
+}
+
+export default function ContactsPage({user, ColorTheme}: ContactsPageProps){
+    const [isSmallDevice, setIsSmallDevice] = useState(
+            () => window.matchMedia('(max-width: 1700px)').matches
+        );
+    
+        useEffect(() => {
+            const mediaQuery = window.matchMedia('(max-width: 1700px)');
+    
+        function handleChange(event: MediaQueryListEvent) {
+            setIsSmallDevice(event.matches);
+        }
+    
+        mediaQuery.addEventListener('change', handleChange);
+    
+        return () => {
+            mediaQuery.removeEventListener('change', handleChange);
+        };
+        }, []);
     return (
         <>
-        <Header></Header>
+        {isSmallDevice ? <SmallHeader user={user}></SmallHeader> : <Header user={user}></Header>}
         <div className="header-space"></div>
 
         <section className="section contacts-page-about-as">
@@ -22,7 +49,15 @@ export default function ContactsPage(){
 
 <br></br>For us, growing plants is about more than beautiful leaves. It is about patience, curiosity, and the joy of caring for something. Whether you are a beginner or an experienced plant lover, there is a place for you here.
 
-Let’s learn, share, and grow together.</p>
+Let’s learn, share, and grow together.
+<br></br>
+<br></br>
+
+Our contacts:
+<br></br>
+
++7 (965) 407-53-01 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Growth.encyclopedia@email.com
+</p>
             </div>
             <div className="contacts-page-about-as__image-field">
 
@@ -1313,7 +1348,7 @@ Let’s learn, share, and grow together.</p>
                 <img className="contacts-page-feedback__decoration-image" src="../../public/decoration1.png"></img>
             </div> */}
             <div className="contacts-page-feedback__cards">
-                <FeedbackCard
+                {/* {ColorTheme == 'dark' ? (<><FeedbackCard
                 authorName="ChiChi"
                 authorAvatarLink="../../public/blog-avatar/06.png"
                 region="South Africa"
@@ -1330,7 +1365,8 @@ Let’s learn, share, and grow together.</p>
                 authorAvatarLink="../../public/blog-avatar/08.png"
                 region="South Africa"
                 feedback="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur justo quis euismod vehicula. Quisque diam dui, imperdiet et"
-                date="14.01.2026"></FeedbackCard>
+                date="14.01.2026"></FeedbackCard></>) : */ }
+                <FeedbackCarousel></FeedbackCarousel>
             </div>
             {/* <div className="contacts-page-feedback__decoration">
                 <img className="contacts-page-feedback__decoration-image" src="../../public/decoration3.png"></img>

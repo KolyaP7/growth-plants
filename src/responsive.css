@@ -1,0 +1,435 @@
+
+/* =========================================================
+   RESPONSIVE DESIGN SYSTEM
+   Breakpoints: 1440 / 1280 / 1024 / 768 / 375
+   ========================================================= */
+
+
+/* =========================================================
+   01 | LARGE DESKTOP
+   <= 1440px
+   ========================================================= */
+
+@media (max-width: 1440px) {
+  :root {
+
+    /* Typography */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-md-lg: 1.1rem;
+    --font-size-lg: 1.2rem;
+    --font-size-lg-xl: 1.35rem;
+    --font-size-xl: 1.45rem;
+    --font-size-2xl: 1.9rem;
+    --font-size-3xl: 2.35rem;
+
+    /* Spacing */
+    --space-3xs: 4px;
+    --space-2xs: 8px;
+    --space-xs: 12px;
+    --space-sm: 16px;
+    --space-md: 22px;
+    --space-lg: 30px;
+    --space-xl: 44px;
+    --space-2xl: 60px;
+
+    /* Buttons */
+    --button-width-3xs: 75px;
+    --button-width-sm: 145px;
+    --button-width-md: 170px;
+    --button-width-lg: 190px;
+    --button-width-3xl: 420px;
+
+    --button-height-xs: 40px;
+    --button-height-sm: 56px;
+    --button-height-md: 105px;
+
+    /* Section Heights */
+    --section-height-2xs: 650px;
+    --section-height-xs: 750px;
+    --section-height-sm: 850px;
+    --section-height-md: 950px;
+    --section-height-lg: 1050px;
+    --section-height-xl: 1150px;
+    --section-height-2xl: 1250px;
+    --section-height-3xl: 1350px;
+
+    /* Height Scale */
+    --height-3xs: 20px;
+    --height-2xs: 65px;
+    --height-xs: 90px;
+    --height-sm: 155px;
+    --height-md: 205px;
+    --height-lg: 250px;
+    --height-xl: 300px;
+    --height-2xl: 350px;
+    --height-3xl: 410px;
+    --height-max: 470px;
+
+    /* Width Scale */
+    --width-3xs: 20px;
+    --width-2xs: 48px;
+    --width-xs: 75px;
+    --width-sm: 105px;
+    --width-md: 130px;
+    --width-lg: 160px;
+    --width-xl: 190px;
+    --width-2xl: 220px;
+    --width-3xl: 255px;
+    --width-max: 280px;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+    --radius-xl: 30px;
+    --radius-2xl: 38px;
+    --radius-3xl: 46px;
+    --radius-4xl: 52px;
+  }
+}
+
+
+/* =========================================================
+   02 | DESKTOP / LAPTOP
+   <= 1280px
+   ========================================================= */
+
+@media (max-width: 1280px) {
+  :root {
+
+    /* Typography */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.85rem;
+    --font-size-md: 0.95rem;
+    --font-size-md-lg: 1.05rem;
+    --font-size-lg: 1.15rem;
+    --font-size-lg-xl: 1.3rem;
+    --font-size-xl: 1.4rem;
+    --font-size-2xl: 1.8rem;
+    --font-size-3xl: 2.2rem;
+
+    /* Spacing */
+    --space-3xs: 4px;
+    --space-2xs: 7px;
+    --space-xs: 10px;
+    --space-sm: 14px;
+    --space-md: 20px;
+    --space-lg: 26px;
+    --space-xl: 38px;
+    --space-2xl: 52px;
+
+    /* Buttons */
+    --button-width-3xs: 70px;
+    --button-width-sm: 135px;
+    --button-width-md: 155px;
+    --button-width-lg: 180px;
+    --button-width-3xl: 380px;
+
+    --button-height-xs: 38px;
+    --button-height-sm: 52px;
+    --button-height-md: 95px;
+
+    /* Section Heights */
+    --section-height-2xs: 600px;
+    --section-height-xs: 700px;
+    --section-height-sm: 800px;
+    --section-height-md: 900px;
+    --section-height-lg: 1000px;
+    --section-height-xl: 1100px;
+    --section-height-2xl: 1200px;
+    --section-height-3xl: 1300px;
+
+    /* Height Scale */
+    --height-3xs: 20px;
+    --height-2xs: 60px;
+    --height-xs: 85px;
+    --height-sm: 145px;
+    --height-md: 190px;
+    --height-lg: 235px;
+    --height-xl: 280px;
+    --height-2xl: 325px;
+    --height-3xl: 390px;
+    --height-max: 440px;
+
+    /* Width Scale */
+    --width-3xs: 20px;
+    --width-2xs: 45px;
+    --width-xs: 70px;
+    --width-sm: 95px;
+    --width-md: 120px;
+    --width-lg: 145px;
+    --width-xl: 175px;
+    --width-2xl: 200px;
+    --width-3xl: 235px;
+    --width-max: 260px;
+
+    /* Radius */
+    --radius-sm: 7px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-2xl: 36px;
+    --radius-3xl: 42px;
+    --radius-4xl: 48px;
+  }
+}
+
+
+/* =========================================================
+   03 | TABLET LANDSCAPE / SMALL LAPTOP
+   <= 1024px
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  :root {
+
+    /* Typography */
+    --font-size-xs: 0.7rem;
+    --font-size-sm: 0.8rem;
+    --font-size-md: 0.9rem;
+    --font-size-md-lg: 1rem;
+    --font-size-lg: 1.1rem;
+    --font-size-lg-xl: 1.2rem;
+    --font-size-xl: 1.3rem;
+    --font-size-2xl: 1.65rem;
+    --font-size-3xl: 2rem;
+
+    /* Spacing */
+    --space-3xs: 3px;
+    --space-2xs: 6px;
+    --space-xs: 9px;
+    --space-sm: 12px;
+    --space-md: 18px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 44px;
+
+    /* Buttons */
+    --button-width-3xs: 65px;
+    --button-width-sm: 120px;
+    --button-width-md: 145px;
+    --button-width-lg: 165px;
+    --button-width-3xl: 340px;
+
+    --button-height-xs: 38px;
+    --button-height-sm: 48px;
+    --button-height-md: 85px;
+
+    /* Section Heights */
+    --section-height-2xs: 550px;
+    --section-height-xs: 650px;
+    --section-height-sm: 750px;
+    --section-height-md: 850px;
+    --section-height-lg: 950px;
+    --section-height-xl: 1050px;
+    --section-height-2xl: 1150px;
+    --section-height-3xl: 1250px;
+
+    /* Height Scale */
+    --height-3xs: 18px;
+    --height-2xs: 55px;
+    --height-xs: 75px;
+    --height-sm: 125px;
+    --height-md: 165px;
+    --height-lg: 210px;
+    --height-xl: 250px;
+    --height-2xl: 290px;
+    --height-3xl: 350px;
+    --height-max: 400px;
+
+    /* Width Scale */
+    --width-3xs: 18px;
+    --width-2xs: 40px;
+    --width-xs: 65px;
+    --width-sm: 85px;
+    --width-md: 105px;
+    --width-lg: 130px;
+    --width-xl: 155px;
+    --width-2xl: 180px;
+    --width-3xl: 210px;
+    --width-max: 235px;
+
+    /* Radius */
+    --radius-sm: 7px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --radius-2xl: 30px;
+    --radius-3xl: 36px;
+    --radius-4xl: 42px;
+  }
+}
+
+
+/* =========================================================
+   04 | TABLET / MOBILE
+   <= 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+  :root {
+
+    /* Typography */
+    --font-size-xs: 0.7rem;
+    --font-size-sm: 0.8rem;
+    --font-size-md: 0.875rem;
+    --font-size-md-lg: 0.95rem;
+    --font-size-lg: 1rem;
+    --font-size-lg-xl: 1.1rem;
+    --font-size-xl: 1.2rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.8rem;
+
+    /* Spacing */
+    --space-3xs: 3px;
+    --space-2xs: 5px;
+    --space-xs: 8px;
+    --space-sm: 10px;
+    --space-md: 16px;
+    --space-lg: 20px;
+    --space-xl: 28px;
+    --space-2xl: 36px;
+
+    /* Buttons */
+    --button-width-3xs: 60px;
+    --button-width-sm: 110px;
+    --button-width-md: 130px;
+    --button-width-lg: 150px;
+    --button-width-3xl: 100%;
+
+    --button-height-xs: 40px;
+    --button-height-sm: 46px;
+    --button-height-md: 64px;
+
+    /* Section Heights */
+    --section-height-2xs: 400px;
+    --section-height-xs: 480px;
+    --section-height-sm: 560px;
+    --section-height-md: 640px;
+    --section-height-lg: 720px;
+    --section-height-xl: 800px;
+    --section-height-2xl: 880px;
+    --section-height-3xl: 960px;
+
+    /* Height Scale */
+    --height-3xs: 16px;
+    --height-2xs: 44px;
+    --height-xs: 60px;
+    --height-sm: 90px;
+    --height-md: 120px;
+    --height-lg: 155px;
+    --height-xl: 190px;
+    --height-2xl: 220px;
+    --height-3xl: 270px;
+    --height-max: 320px;
+
+    /* Width Scale */
+    --width-3xs: 16px;
+    --width-2xs: 36px;
+    --width-xs: 55px;
+    --width-sm: 75px;
+    --width-md: 90px;
+    --width-lg: 110px;
+    --width-xl: 135px;
+    --width-2xl: 155px;
+    --width-3xl: 180px;
+    --width-max: 210px;
+
+    /* Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+    --radius-2xl: 26px;
+    --radius-3xl: 32px;
+    --radius-4xl: 36px;
+  }
+}
+
+
+/* =========================================================
+   05 | SMALL MOBILE
+   <= 375px
+   ========================================================= */
+
+@media (max-width: 375px) {
+  :root {
+
+    /* Typography */
+    --font-size-xs: 0.65rem;
+    --font-size-sm: 0.75rem;
+    --font-size-md: 0.85rem;
+    --font-size-md-lg: 0.9rem;
+    --font-size-lg: 0.95rem;
+    --font-size-lg-xl: 1rem;
+    --font-size-xl: 1.1rem;
+    --font-size-2xl: 1.35rem;
+    --font-size-3xl: 1.6rem;
+
+    /* Spacing */
+    --space-3xs: 2px;
+    --space-2xs: 4px;
+    --space-xs: 6px;
+    --space-sm: 8px;
+    --space-md: 12px;
+    --space-lg: 16px;
+    --space-xl: 22px;
+    --space-2xl: 28px;
+
+    /* Buttons */
+    --button-width-3xs: 55px;
+    --button-width-sm: 100px;
+    --button-width-md: 115px;
+    --button-width-lg: 135px;
+    --button-width-3xl: 100%;
+
+    --button-height-xs: 38px;
+    --button-height-sm: 44px;
+    --button-height-md: 56px;
+
+    /* Section Heights */
+    --section-height-2xs: 350px;
+    --section-height-xs: 420px;
+    --section-height-sm: 490px;
+    --section-height-md: 560px;
+    --section-height-lg: 630px;
+    --section-height-xl: 700px;
+    --section-height-2xl: 770px;
+    --section-height-3xl: 840px;
+
+    /* Height Scale */
+    --height-3xs: 14px;
+    --height-2xs: 40px;
+    --height-xs: 52px;
+    --height-sm: 75px;
+    --height-md: 100px;
+    --height-lg: 130px;
+    --height-xl: 160px;
+    --height-2xl: 185px;
+    --height-3xl: 230px;
+    --height-max: 270px;
+
+    /* Width Scale */
+    --width-3xs: 14px;
+    --width-2xs: 32px;
+    --width-xs: 48px;
+    --width-sm: 65px;
+    --width-md: 80px;
+    --width-lg: 95px;
+    --width-xl: 115px;
+    --width-2xl: 135px;
+    --width-3xl: 155px;
+    --width-max: 180px;
+
+    /* Radius */
+    --radius-sm: 5px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 20px;
+    --radius-3xl: 24px;
+    --radius-4xl: 28px;
+  }
+}

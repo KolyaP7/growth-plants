@@ -1,4 +1,7 @@
 /* SECTION HERO */
+h1 {
+    font-weight: var(--font-weight-black) !important;
+}
 .hero{
     position: relative;
     background-image: url(../../public/tropical-green-leaves-background.jpg);
@@ -43,9 +46,12 @@
     height: var(--height-md);
     margin: 0;
     max-width: var(--width-3);
-
-
+    overflow: hidden;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
 }
+
 .hero__addition-information-selector{
     display: flex;
     flex-direction: column;
@@ -90,7 +96,7 @@
 /* SECTION PLANTS FOR PEOPLE */
 .plants-for-people{
     position: relative;
-    background-color: white;
+    background-color: transparent;
     color: black;
 }
 .plants-for-people :nth-child(n){
@@ -103,10 +109,10 @@
 .plants-for-people__header{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 5%;
-    height: var(--height-xl);
-    margin-bottom: calc(var(--space-xl) * 4);
-
+    /* height: var(--height-xl); */
+    margin-bottom: calc(var(--space-xl) * 2) !important;
 }
 .plants-for-people__information-section{
     flex: 1;
@@ -120,16 +126,20 @@
     font-size: calc(var(--font-size-2xl) * 2);
     line-height: var(--line-height-xs);
     font-weight: var(--font-weight-black);
+    color: var(--color-black);
     margin: 0 !important;
 }
 .plants-for-people__text{
     font-size: var(--font-size-lg);
+    color: var(--color-black);
+    display: block;
 }
 .plants-for-people__video-section{
     display: flex;
     justify-content: center;
     flex: 1;
     margin: 0 !important;
+    min-width: 200px;
 
 }
 .plants-for-people__video-wrapper{
@@ -148,6 +158,9 @@
 .plants-for-people__description-section{
     display: flex;
     flex: 2;
+    color: var(--color-black);
+    min-width: 250px;
+
 }
 
 .plants-for-people__description{
@@ -164,23 +177,29 @@
     object-fit: cover;
     display: inline;
     padding: 0;
+    border-radius: var(--radius-full);
+    background-color: transparent;
+
 }
 .plants-for-people__actions{
     margin-top: var(--space-xl);
     display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
 }
-.plants-for-people__actions :nth-child(5){
-    position: absolute;
-    right: calc(var(--space-xl) * 2);
+.plants-for-people__actions-group{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .plants-for-people__cards{
-    height: calc(var(--space-xl) * 10);
+    height: 100%;
     width: 100%;
 }
 .plants-for-people__cards-group{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 1%;
     width: 100%;
     height: 100%;
@@ -190,8 +209,8 @@
 /* SECTION  NEW PLANTS */
 .new-plants{
     position: relative;
-    background-color: white;
-    color: black;
+    background-color: transparent;
+    color: var(--color-black);
 }
 .new-plants__header{
     display: flex;
@@ -206,11 +225,11 @@
 .new-plants__header-text{
     font-size: var(--font-size-lg);
     flex: 4;
-
 }
 .new-plants__cards{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 1%;
     width: 100%;
 }
@@ -218,7 +237,7 @@
 /* SECTION INDOOR COLLECTION */
 .indoor-collection{
     position: relative;
-    color: black;
+    color: var(--color-black);
 }
 .indoor-collection__header{
     display: flex;
@@ -248,4 +267,72 @@
 }
 .indoor-collection__cards :nth-child(2) :nth-child(2) {
     flex: 2;
+}
+
+@media (width <= 900px){
+    .hero__addition-information{
+        display: none;
+    }
+    .plants-for-people__cards{
+        height: 100%;
+        width: 100%;
+    }
+}
+@media (max-width: 1440px) {
+    .hero__addition-information-text{
+        font-size: calc(var(--font-size-lg) * 0.95);
+    }
+    .hero__title{
+        margin: 10% 0;
+    }
+    .hero__h1-title{
+        font-size: calc(var(--font-size-lg) * 12);
+    }
+    .hero__addition-information-selector-images{
+        display: none;
+    }
+    .hero__addition-information{
+        max-width: var(--width-2);
+    }
+}
+@media (max-width: 1280px) {
+    .hero__h1-title{
+        font-size: calc(var(--font-size-lg) * 10);
+    }
+    .hero__addition-information-text{
+        font-size: calc(var(--font-size-lg) * 0.85);
+    }
+}
+@media (max-width: 1024px) {
+    .hero__title{
+        margin: 20% 0;
+    }
+    .hero__h1-title{
+        font-size: calc(var(--font-size-lg) * 8);
+    }
+    .hero__addition-information-text{
+        font-size: calc(var(--font-size-lg) * 0.75);
+    }
+}
+@media (max-width: 768px) {
+    .hero__title{
+        margin: 30% 0;
+    }
+    .hero__h1-title{
+        font-size: calc(var(--font-size-lg) * 6);
+    }
+    .hero__addition-information-text{
+        font-size: calc(var(--font-size-lg) * 0.7);
+    }
+}
+@media (max-width: 375px) {
+    .hero__title{
+        margin: 40% 0;
+    }
+    .hero__h1-title{
+        font-size: calc(var(--font-size-lg) * 5);
+    }
+    .hero__addition-information-text{
+        font-size: calc(var(--font-size-lg) * 0.7);
+    }
 }

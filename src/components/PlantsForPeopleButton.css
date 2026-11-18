@@ -1,19 +1,21 @@
 .plants-for-people__button{
-    border: var(--border-width-medium) solid black;
+    border: var(--border-width-medium) solid var(--color-black);
     border-radius: var(--radius-3xl);
-    height: 100%;
     background-color: transparent;
-    color: black;
+    color: var(--color-black);
     font-size: var(--font-size-lg);
     padding: var(--space-md) var(--space-2xl);
+    text-wrap: nowrap;
+    transition: all 0.4s ease;
 }
 
 .plants-for-people__button:hover{
-    background-color: black;
-    color: white;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    transition: all 0.3s ease;
 }
 .plants-for-people__button--active{
-    background-color: black;
-    color: white;
+    background-color: var(--color-black);
+    color: var(--color-white);
 }
 

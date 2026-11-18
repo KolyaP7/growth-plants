@@ -1,4 +1,5 @@
 import HeaderWrapper from '../components/HeaderWrapper.tsx';
+import SmallHeader from '../components/SmallHeader.tsx';
 import Header from '../components/Header.tsx';
 import ArcticleCard from '../components/ArticleCard.tsx';
 import PostCard from '../components/PostCard.tsx';
@@ -6,10 +7,34 @@ import AdditionArticleCard from '../components/AdditionArticleCard.tsx';
 import './BlogPage.css';
 import Footer from '../components/FooterSection.tsx';
 import FooterSectionVer2 from '../components/FooterSectionVer2.tsx';
-export default function BlogPage(){
+import { useEffect, useState } from 'react';
+import type { User } from '../types.tsx';
+
+interface BlogPageProps{
+    user: User | null;
+}
+
+export default function BlogPage({user}: BlogPageProps){
+    const [isSmallDevice, setIsSmallDevice] = useState(
+            () => window.matchMedia('(max-width: 1700px)').matches
+        );
+    
+        useEffect(() => {
+            const mediaQuery = window.matchMedia('(max-width: 1700px)');
+    
+        function handleChange(event: MediaQueryListEvent) {
+            setIsSmallDevice(event.matches);
+        }
+    
+        mediaQuery.addEventListener('change', handleChange);
+    
+        return () => {
+            mediaQuery.removeEventListener('change', handleChange);
+        };
+        }, []);
     return (
         <>
-        <Header></Header>
+        {isSmallDevice ? <SmallHeader user={user}></SmallHeader> : <Header user={user}></Header>}
         <div className="header-space"></div>
         <section className="section blog-page-title">
             <h1 className="blog-page-title__title">Exploring New Articles</h1>
@@ -19,38 +44,38 @@ export default function BlogPage(){
             <div className="blog-page__articles">
                 <ArcticleCard
                 author="Saarah Mcbride"
-                imageLink="../../public/blog-thumbnail/02.png"
+                imageLink="../../public/articles-images/1.jpg"
                 avatarLink="../../public/blog-avatar/08.png"
-                date="Nov 29, 2024"
-                title="Eco-Friendly Homes: The Future of Real Estate"
-                description="The real estate industry is undergoing a significant transformation as eco-friendly homes gain popularity among buyers and developers alike. With increasing awareness of climate change and the need for sustainable living, eco-friendly homes represent not only a lifestyle choice but also a critical step toward reducing environmental impact."
+                date="Nov 11, 2026"
+                title="The World of Tropical Plants: Nature's Living Masterpieces"
+                description="Discover the extraordinary diversity of tropical plants, from magnificent Monstera leaves to exotic Philodendrons. Learn about their natural habitats, unique characteristics, and the environmental conditions that allow them to thrive in tropical ecosystems."
                 buttonLink="/"
                 ></ArcticleCard>
                 <ArcticleCard
-                author="Author"
-                imageLink="../../public/blog-thumbnail/01.png"
+                author="James Anderson"
+                imageLink="../../public/articles-images/6.jpg"
                 avatarLink="../../public/blog-avatar/05.png"
                 date="Nov 29, 2024"
-                title="Digital Declutter: Cutting the Noise in a Hyperconnected World"
-                description="In today’s hyperconnected world, the lines between work, leisure, and rest have blurred significantly. Notifications, endless streams of content, and the need to always stay connected often create a digital noise that impacts mental well-being, focus, and productivity. This is where the concept of digital declutter comes into play."
+                title="Understanding Plant Leaves: Structure, Functions and Growth"
+                description="Leaves are essential organs that make plant life possible. Explore their fascinating structures, understand how photosynthesis works, and discover how different leaf shapes and adaptations help plants survive in diverse environments."
                 buttonLink="/"
                 ></ArcticleCard>
                 <ArcticleCard
                 author="Cruz Mcintyre"
-                imageLink="../../public/blog-thumbnail/03.png"
+                imageLink="../../public/articles-images/4.jpg"
                 avatarLink="../../public/blog-avatar/04.png"
                 date="Nov 29, 2024"
-                title="A Foodie’s Guide to Europe: Best Culinary Experiences by Country"
-                description="Europe is a treasure trove of culinary delights, offering a diverse array of flavors, techniques, and traditions. For food enthusiasts, the continent provides endless opportunities to indulge in authentic dishes and unforgettable dining experiences."
+                title="Indoor Gardening: Creating a Healthy Green Space at Home"
+                description="Bring nature indoors with the right selection of houseplants. Discover how lighting, humidity, watering routines, and proper plant placement can transform your home into a healthy and beautiful green environment."
                 buttonLink="/"
                 ></ArcticleCard>
                 <ArcticleCard
                 author="Amna"
-                imageLink="../../public/blog-thumbnail/04.png"
+                imageLink="../../public/articles-images/2.jpg"
                 avatarLink="../../public/blog-avatar/08.png"
                 date="Nov 29, 2024"
-                title="The Art of Black-and-White Photography"
-                description="Black-and-white photography is a timeless art form that transcends trends and technology. By stripping away color, this medium emphasizes composition, texture, and emotion, creating images that are both powerful and evocative."
+                title="The Essential Guide to Healthy Plant Growth"
+                description="Healthy plants begin with proper care. Learn the fundamentals of watering, soil selection, fertilization, pruning, and light management to help your plants grow stronger and remain healthy throughout the year."
                 buttonLink="/"
                 ></ArcticleCard>
             </div>

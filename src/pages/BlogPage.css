@@ -1,11 +1,9 @@
 
-
-
-
 .blog-page-title{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--color-black);
 }
 .blog-page-title__title{
     font-size: calc(var( --font-size-xl) * 2);
@@ -21,6 +19,8 @@
     margin-top: var(--space-lg);
     display: flex;
     gap: var(--space-lg);
+    color: var(--color-black);
+
 }
 .blog-page__articles{
     flex: 4;
@@ -37,5 +37,10 @@
 .blog-trending-posts__title{
     font-size: var(--font-size-xl);
     text-decoration: underline;
+}
 
+@media (width <= 1800px){
+    .blog-page__articles{
+        justify-content: center;
+    }
 }

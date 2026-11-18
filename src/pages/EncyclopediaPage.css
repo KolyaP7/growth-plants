@@ -1,29 +1,4 @@
-:root {
-  /* Основные цвета светлой темы */
-  --color-bg-main: #ffffff;
-  --color-bg-secondary: #f8f9fa;
-  --color-bg-tertiary: #f1f3f5;
-  --color-bg-card: #ffffff;
 
-  --color-text-primary: #1a1a1a;
-  --color-text-secondary: #4a4a4a;
-  --color-text-muted: #6c757d;
-
-  --color-border: #e0e0e0;
-  --color-border-light: #eeeeee;
-
-  /* Акцентные цвета (можно оставить или слегка приглушить) */
-  --color-aqua-green: #009688;
-  --color-bright-emerald: #00c853;
-  --color-neon-green: #69f0ae;
-
-  --color-accent-bg: rgba(0, 150, 136, 0.08);
-  --color-accent-border: #009688;
-
-  /* Тени */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
 
 .encyclopedia-page__background {
   display: block;

@@ -3,7 +3,10 @@
     justify-content: space-between;
     gap: var(--space-lg);
     position: relative;
-    height: calc(var(--height-3xl) * 1.65);
+    color: var(--color-black);
+
+    /* height: calc(var(--height-3xl) * 1.75); */
+
 }
 .contacts-page-about-as__content{
     display: flex;
@@ -19,14 +22,16 @@
     font-weight: var(--font-weight-black);
 }
 .contacts-page-about-as__description{
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-regular); 
+    font-size: clamp(var(--font-size-md), 2vw, var(--font-size-xl));
+    font-weight: var(--font-weight-regular);
 }
 .contacts-page-about-as__image-field{
     display: flex;
     justify-content: flex-end;
     position: relative;
-    width: calc(var(--width-3xl) * 2.25);
+    width: clamp(calc(var(--width-3xs) * 2.25), 40vw, calc(var(--width-3xl) * 2.25));
+    height: clamp(calc(var(--width-3xs) * 2.25), 50vw, calc(var(--width-3xl) * 2.5));
+
 
 }
 .contacts-page-about-as__image-container{
@@ -44,8 +49,8 @@
     opacity: 1;
 }
 .contacts-page-about-as__image{
-    width: 80%;
-    height: 80%;
+    width: clamp(calc(var(--width-3xs) * 2.25), 35vw, calc(var(--width-3xl) * 2.25));
+    height: auto;
     object-fit: cover;
     z-index: 2;
 }
@@ -76,9 +81,10 @@
 .contacts-page-feedback{
     display: flex;
     align-items: center;
-    height: calc(var(--section-height-2xs) / 1.25);
+    /* height: calc(var(--section-height-2xs) / 1.2); */
     width: 100vw;
-    background-color: var(--color-pale-green);
+    background-color: var(--color-bg-6);
+
     /* background-color: var(--color-jungle-bright); */
 
 
@@ -86,7 +92,7 @@
 .contacts-page-feedback__cards{
     width: 80%;
     height: var(--height-xl);
-    margin: 0 auto;
+    margin: 0 auto !important;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -105,12 +111,36 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(var(--height-max) * 1.25);
+    /* height: calc(var(--height-max) * 1.25); */
     width: 70%;
     margin: 0 auto;
     padding: var(--space-xl);
+    margin-top: 50px;
+
 }
 .contacts-page-assist__title{
+    color: var(--color-black);
     font-size: calc(var(--font-size-3xl) * 1.1);
     max-width: 50%;
+
+}
+
+
+@media (max-width: 1440px) {
+.contacts-page-assist__title{
+    width: 100%;
+    max-width: 100%;
+}
+}
+@media (max-width: 1280px) {
+    
+}
+@media (max-width: 1024px) {
+    
+}
+@media (max-width: 768px) {
+    
+}
+@media (max-width: 375px) {
+    
 }

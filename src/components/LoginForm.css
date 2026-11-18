@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     width: var(--width-4);
-    height: calc(var(--height-3xl) * 1.4);
+    min-width: 400px;
+    height: calc(var(--height-3xl) * 1.55);
     position: relative;
     padding: var(--space-lg);
     margin: 0 auto;
@@ -91,6 +92,7 @@
 .login-form__login-button{
     width: calc(100% - 2 * var(--space-lg));
     height: calc(var(--height-xs) / 1.5);
+    min-height: 35px;
     background-color: var(--color-soft-sage);
     border-radius: var(--radius-md);
     border: 0;

@@ -5,10 +5,10 @@
     z-index: -1;
     width: 100vw;
     height: 100vh;
-    background-color: var(--color-pale-green);
+    background-color: var(--color-bg-1);
 
 }
 .login-page{
-    height: var(--section-height-2xs);
+    /* height: calc(var(--section-height-2xs)); */
     background-color: transparent;
 }

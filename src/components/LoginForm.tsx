@@ -1,7 +1,24 @@
 import { NavLink } from 'react-router';
 import './LoginForm.css';
+import { useEffect, useState } from 'react';
 
-export default function LoginForm(){
+interface LoginFormProps{
+    handleLogin: (
+        login: string,
+        password: string
+    ) => Promise<void>;
+}
+
+export default function LoginForm({handleLogin}: LoginFormProps){
+
+    const [ login, setLogin ] = useState('testuser');
+    const [ password, setPassword ] = useState('123456');
+
+    useEffect(() => {
+        console.log(login, password);
+    }, [login, password])
+
+
     return (
         <div className="login-form">
             <div className="login-form__header">
@@ -13,21 +30,27 @@ export default function LoginForm(){
                 <div className="login-form__input-container">
                     <label className="login-form__label">
                         Username <br></br>
-                        <input className="login-form__input" type="text" placeholder="Enter your username"></input>
+                        <input 
+                        value={login}
+                        onChange={(event) => setLogin(event.target.value)}
+                        className="login-form__input" type="text" placeholder="Enter your username"></input>
                     </label>
                 </div>
                 <div className="login-form__input-container">
                     <label className="login-form__label">
                         Password <br></br>
-                        <input className="login-form__input" type="password" placeholder="Enter your password"></input>
+                        <input
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                        className="login-form__input" type="password" placeholder="Enter your password"></input>
                     </label>
-                    <NavLink 
+                    <NavLink
                     to='/'
                     className="login-form__body-forgot-password-link">Forgot Password?</NavLink>
                 </div>
             </div>
             <div className="login-form__footer">
-                <button className="login-form__login-button">Login</button>
+                <button onClick={() => handleLogin(login, password)} className="login-form__login-button" type="submit">Login</button>
                 <p className="login-form__footer-text">New to Logo?<NavLink to='/' className="login-form__footer-register-link"> <b>Register</b> Here</NavLink></p>
             </div>
         </div>

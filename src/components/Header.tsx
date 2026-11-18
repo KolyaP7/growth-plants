@@ -4,12 +4,27 @@ import './Header.css'
 import { NavLink, Link } from 'react-router'
 import { useEffect, useRef, useState } from 'react'
 
-export default function Header(){
+import type { User } from '../types.tsx';
+
+interface HeaderProps{
+    user: User | null;
+
+}
+
+export default function Header({user}: HeaderProps){
     const [ ActiveIndex, SetActiveIndex ] = useState(0);
     const sentinelRef = useRef<HTMLDivElement | null>(null);
     const [isStuck, setIsStuck] = useState(false);
 
-     const [isScrolled, setIsScrolled] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    const [ IsSearchFull, SetIsSearchFull ] = useState(false);
+
+    const [ IsSearchFocused, SetIsSearchFocused ] = useState(false);
+
+    const handleSearchInput = () => {
+        SetIsSearchFocused(prev => !prev);
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -53,18 +68,33 @@ export default function Header(){
                     
                 </div>
                 <div className="header__section header__section--right-side">
-                    <div className="header__search">⌕</div>
-                    <HeaderLinkButton 
-                    title="Shop" 
+                    <div onClick={() => (SetIsSearchFull(prev => !prev))} className="header__search-container"></div>
+                        <div className={`header__search-full 
+                            ${IsSearchFocused ? 'header__search-full--focused' : ""} 
+                            ${IsSearchFull ? 'header__search-full--full' : ""}`}>
+                            <div className={`header__search ${IsSearchFull ? 'header__search--full' : ""}`}>⌕ <input onInput={handleSearchInput} className={`header__input ${IsSearchFull ? "header__input--full" : ""}`} type='text' placeholder="search"></input></div>
+                        </div>
+                        
+                        
+                        
+                    <HeaderLinkButton
+                    title="Shop"
                     link="/shop"
                     ></HeaderLinkButton>
-                    <HeaderLinkButton 
-                    title="Log in" 
+                    {user == null ?
+                    (<HeaderLinkButton
+                    title="Log in"
                     link="/login"
-                    ></HeaderLinkButton>
+                    ></HeaderLinkButton>) :
+                    (<HeaderLinkButton
+                    title="Account"
+                    link="/account"
+                    imageLink={user.imageLink}
+                    ></HeaderLinkButton>)
+                    }
+                    
                 </div>
-                
-
+            
             </div>
         </header>
         </>

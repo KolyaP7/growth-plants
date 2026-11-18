@@ -1,73 +1,6 @@
 :root {
     /* --color-accent: rgb(113, 151, 112); */
-    --color-accent: #a6b6a6;
-    --color-muted: rgb(0 0 0 / 0.1);
 
-    /* 01–06 | Deep Forest */
-    --color-forest: #102A20;
-    --color-deep-forest: #091C15;
-    --color-dark-green: #19382A;
-    --color-pine: #244A37;
-    --color-jungle: #315B43;
-    --color-moss: #456B50;
-
-    /* 07–12 | Botanical Green */
-    --color-leaf: #527C58;
-    --color-sage: #78977A;
-    --color-soft-sage: #A2B99E;
-    --color-light-sage: #C5D5BF;
-    --color-mint: #D9E9D6;
-    --color-pale-green: #EDF4E9;
-
-    /* 13–18 | Natural Neutrals */
-    --color-cream: #F7F5EF;
-    --color-warm-white: #FCFBF7;
-    --color-pure-white: #FFFFFF;
-    --color-sand: #E8E1D3;
-    --color-beige: #D5C9B5;
-    --color-stone: #B8B4A7;
-
-    /* 19–23 | Earthy Accents */
-    --color-terracotta: #B9785C;
-    --color-clay: #CC9274;
-    --color-caramel: #B28A5A;
-    --color-olive: #858B55;
-    --color-golden-leaf: #C1A66B;
-
-    /* 24–27 | Botanical Details */
-    --color-eucalyptus: #91AAA0;
-    --color-seafoam: #B5D0C3;
-    --color-fern: #64846A;
-    --color-lime-leaf: #A8B978;
-
-    /* 28–30 | Typography & Borders */
-    --color-text-primary: #17231B;
-    --color-text-secondary: #68766A;
-    --color-border: #D8DED5;
-
-  /* 31–42 | Tropical Bright Colors */
-
-    /* Emerald */
-    --color-bright-emerald: #00A86B;
-    --color-vivid-emerald: #00C878;
-    --color-deep-emerald: #007F5F;
-
-    /* Tropical Green */
-    --color-tropical-green: #00B84A;
-    --color-neon-green: #39E600;
-    --color-lime-green: #A8E629;
-
-    /* Jungle Green */
-    --color-jungle-bright: #168F45;
-    --color-fern-bright: #45C96B;
-
-    /* Turquoise & Aqua */
-    --color-tropical-teal: rgb(0, 127, 120);
-    --color-bright-teal: #00BFA5;
-    --color-aqua-green: #36D6B0;
-
-    /* Fresh Leaf */
-    --color-fresh-leaf: #C1F05A;
 
     /* Ширина по 12 колоночной сетке: */
     --width-1: 8.333333%;  /* 1 / 12 */
@@ -172,6 +105,506 @@
     --border-width-thick: 3px;
     --border-width-extra-thick: 4px;
 
-    /* Encyclopedia */
-    --color-main-dark: rgb(20, 20, 20);
+  /* Основные цвета светлой темы */
+   --color-black: #000;
+   --color-white: #fff;
+
+   --color-bg-main: #ffffff;
+   --color-bg-secondary: #f8f9fa;
+   --color-bg-tertiary: #f1f3f5;
+   --color-bg-card: #ffffff;
+
+   --color-text-primary: #1a1a1a;
+   --color-text-secondary: #4a4a4a;
+   --color-text-muted: #6c757d;
+
+   --color-border: #e0e0e0;
+   --color-border-light: #eeeeee;
+
+   /* Акцентные цвета (можно оставить или слегка приглушить) */
+   --color-aqua-green: #009688;
+   --color-bright-emerald: #00c853;
+   --color-neon-green: #69f0ae;
+
+   --color-accent-bg: rgba(0, 150, 136, 0.08);
+   --color-accent-border: #009688;
+   --color-deep-blue: #001996;
+
+   /* Тени */
+   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+      /* Encyclopedia */
+   --color-main-dark: rgb(20, 20, 20);
+   --color-accent: #a6b6a6;
+   --color-muted: rgb(0 0 0 / 0.1);
+
+      /* 01–06 | Deep Forest */
+   --color-forest: #102A20;
+   --color-deep-forest: #091C15;
+   --color-dark-green: #19382A;
+   --color-pine: #244A37;
+   --color-jungle: #315B43;
+   --color-moss: #456B50;
+
+   /* 07–12 | Botanical Green */
+   --color-leaf: #527C58;
+   --color-sage: #78977A;
+   --color-soft-sage: #A2B99E;
+   --color-light-sage: #C5D5BF;
+   --color-mint: #D9E9D6;
+   --color-pale-green: #EDF4E9;
+
+   /* 13–18 | Natural Neutrals */
+   --color-cream: #F7F5EF;
+   --color-warm-white: #FCFBF7;
+   --color-pure-white: #FFFFFF;
+   --color-sand: #E8E1D3;
+   --color-beige: #D5C9B5;
+   --color-stone: #B8B4A7;
+
+   /* 19–23 | Earthy Accents */
+   --color-terracotta: #B9785C;
+   --color-clay: #CC9274;
+   --color-caramel: #B28A5A;
+   --color-olive: #858B55;
+   --color-golden-leaf: #C1A66B;
+
+   /* 24–27 | Botanical Details */
+   --color-eucalyptus: #91AAA0;
+   --color-seafoam: #B5D0C3;
+   --color-fern: #64846A;
+   --color-lime-leaf: #A8B978;
+
+   /* 28–30 | Typography & Borders */
+   --color-text-primary: #17231B;
+   --color-text-secondary: #68766A;
+   --color-border: #D8DED5;
+
+/* 31–42 | Tropical Bright Colors */
+
+   /* Emerald */
+   --color-bright-emerald: #00A86B;
+   --color-vivid-emerald: #00C878;
+   --color-deep-emerald: #007F5F;
+
+   /* Tropical Green */
+   --color-tropical-green: #00B84A;
+   --color-neon-green: #39E600;
+   --color-lime-green: #A8E629;
+
+   /* Jungle Green */
+   --color-jungle-bright: #168F45;
+   --color-fern-bright: #45C96B;
+
+   /* Turquoise & Aqua */
+   --color-tropical-teal: rgb(0, 127, 120);
+   --color-bright-teal: #00BFA5;
+   --color-aqua-green: #36D6B0;
+
+   /* Fresh Leaf */
+   --color-fresh-leaf: #C1F05A;
+
+   --color-bg-1: #EDF4E9;
+   --color-bg-2: white;
+   --color-bg-3-elements: white;
+   --color-bg-4-body: white;
+   --color-bg-5-elements: #EDF4E9;
+   --color-bg-6: #C5D5BF;
+
+   --color-text: #008F83;
+
 }
+
+:root[data-theme="light"]{
+   --color-black: #000;
+   --color-white: #fff;
+
+   --color-bg-main: #ffffff;
+   --color-bg-secondary: #f8f9fa;
+   --color-bg-tertiary: #f1f3f5;
+   --color-bg-card: #ffffff;
+
+   --color-text-primary: #1a1a1a;
+   --color-text-secondary: #4a4a4a;
+   --color-text-muted: #6c757d;
+
+   --color-border: #e0e0e0;
+   --color-border-light: #eeeeee;
+
+   /* Акцентные цвета (можно оставить или слегка приглушить) */
+   --color-aqua-green: #009688;
+   --color-bright-emerald: #00c853;
+   --color-neon-green: #69f0ae;
+
+   --color-accent-bg: rgba(0, 150, 136, 0.08);
+   --color-accent-border: #009688;
+   --color-deep-blue: #001996;
+
+   /* Тени */
+   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+      /* Encyclopedia */
+   --color-main-dark: rgb(20, 20, 20);
+   --color-accent: #a6b6a6;
+   --color-muted: rgb(0 0 0 / 0.1);
+
+      /* 01–06 | Deep Forest */
+   --color-forest: #102A20;
+   --color-deep-forest: #091C15;
+   --color-dark-green: #19382A;
+   --color-pine: #244A37;
+   --color-jungle: #315B43;
+   --color-moss: #456B50;
+
+   /* 07–12 | Botanical Green */
+   --color-leaf: #527C58;
+   --color-sage: #78977A;
+   --color-soft-sage: #A2B99E;
+   --color-light-sage: #C5D5BF;
+   --color-mint: #D9E9D6;
+   --color-pale-green: #EDF4E9;
+
+   /* 13–18 | Natural Neutrals */
+   --color-cream: #F7F5EF;
+   --color-warm-white: #FCFBF7;
+   --color-pure-white: #FFFFFF;
+   --color-sand: #E8E1D3;
+   --color-beige: #D5C9B5;
+   --color-stone: #B8B4A7;
+
+   /* 19–23 | Earthy Accents */
+   --color-terracotta: #B9785C;
+   --color-clay: #CC9274;
+   --color-caramel: #B28A5A;
+   --color-olive: #858B55;
+   --color-golden-leaf: #C1A66B;
+
+   /* 24–27 | Botanical Details */
+   --color-eucalyptus: #91AAA0;
+   --color-seafoam: #B5D0C3;
+   --color-fern: #64846A;
+   --color-lime-leaf: #A8B978;
+
+   /* 28–30 | Typography & Borders */
+   --color-text-primary: #17231B;
+   --color-text-secondary: #68766A;
+   --color-border: #D8DED5;
+
+/* 31–42 | Tropical Bright Colors */
+
+   /* Emerald */
+   --color-bright-emerald: #00A86B;
+   --color-vivid-emerald: #00C878;
+   --color-deep-emerald: #007F5F;
+
+   /* Tropical Green */
+   --color-tropical-green: #00B84A;
+   --color-neon-green: #39E600;
+   --color-lime-green: #A8E629;
+
+   /* Jungle Green */
+   --color-jungle-bright: #168F45;
+   --color-fern-bright: #45C96B;
+
+   /* Turquoise & Aqua */
+   --color-tropical-teal: rgb(0, 127, 120);
+   --color-bright-teal: #00BFA5;
+   --color-aqua-green: #36D6B0;
+
+   /* Fresh Leaf */
+   --color-fresh-leaf: #C1F05A;
+
+   --color-bg-1: #EDF4E9;
+   --color-bg-2: white;
+   --color-bg-3-elements: white;
+   --color-bg-4-body: white;
+   --color-bg-5-elements: #EDF4E9;
+   --color-bg-6: #C5D5BF;
+
+   --color-text: #008F83;
+
+}
+
+:root[data-theme="dark"] {
+
+   --color-bg-1: rgba(117, 185, 210, 0.12);
+   --color-bg-2: #4d695d;
+   --color-bg-3-elements: #C5D5BF;
+   --color-bg-4-body: #08110D;
+   --color-bg-5-elements: #4d695d;
+   --color-bg-6: transparent;
+   
+   --color-black: #fff;
+   --color-white: #000;
+
+  /* =========================================
+     01–06 | DEEP FOREST BACKGROUNDS
+     ========================================= */
+   /* --color-bg-main: #121212; */
+  --color-bg-main: #0B1511;
+  --color-bg-secondary: #101D17;
+  --color-bg-tertiary: #16251D;
+  --color-bg-card: #192A21;
+
+
+  --color-main-dark: #08110D;
+
+  --color-forest: #102A20;
+  --color-deep-forest: #091C15;
+  --color-dark-green: #19382A;
+  --color-pine: #244A37;
+  --color-jungle: #315B43;
+  --color-moss: #456B50;
+
+
+  /* =========================================
+     07–12 | BOTANICAL GREEN
+     ========================================= */
+
+  --color-leaf: #527C58;
+  --color-sage: #78977A;
+  --color-soft-sage: #A2B99E;
+  --color-light-sage: #C5D5BF;
+  --color-mint: #D9E9D6;
+  --color-pale-green: #EDF4E9;
+
+
+  /* =========================================
+     13–18 | NATURAL NEUTRALS
+     ========================================= */
+
+  --color-cream: #E8E9DF;
+  --color-warm-white: #F2F3EC;
+  --color-pure-white: #FFFFFF;
+
+  --color-sand: #C9C5B5;
+  --color-beige: #AAA998;
+  --color-stone: #858C80;
+
+
+  /* =========================================
+     19–23 | EARTHY ACCENTS
+     ========================================= */
+
+  --color-terracotta: #D18A6C;
+  --color-clay: #E0A487;
+  --color-caramel: #D1A66E;
+  --color-olive: #A0A76B;
+  --color-golden-leaf: #D6BC7D;
+
+
+  /* =========================================
+     24–27 | BOTANICAL DETAILS
+     ========================================= */
+
+  --color-eucalyptus: #91AAA0;
+  --color-seafoam: #B5D0C3;
+  --color-fern: #64846A;
+  --color-lime-leaf: #B6CD83;
+
+
+  /* =========================================
+     28–30 | TYPOGRAPHY & BORDERS
+     ========================================= */
+
+  --color-text-primary: #E8EEE8;
+  --color-text-secondary: #A4B2A6;
+  --color-text-muted: #748579;
+
+  --color-border: #2B3B31;
+  --color-border-light: #35483B;
+
+
+  /* =========================================
+     31–42 | TROPICAL BRIGHT COLORS
+     ========================================= */
+
+  /* Emerald */
+
+  --color-bright-emerald: #00A86B;
+  --color-vivid-emerald: #00C878;
+  --color-deep-emerald: #007F5F;
+
+  /* Tropical Green */
+
+  --color-tropical-green: #00B84A;
+  --color-neon-green: #39E600;
+  --color-lime-green: #A8E629;
+
+  /* Jungle Green */
+
+  --color-jungle-bright: #168F45;
+  --color-fern-bright: #45C96B;
+
+  /* Turquoise & Aqua */
+
+  --color-tropical-teal: #008F83;
+  --color-bright-teal: #00BFA5;
+  --color-aqua-green: #36D6B0;
+
+  /* Fresh Leaf */
+
+  --color-fresh-leaf: #C1F05A;
+
+
+  /* =========================================
+     43–52 | SEMANTIC COLORS
+     ========================================= */
+
+  /* Primary Accent */
+
+  --color-accent: #8EBD91;
+  --color-accent-hover: #A6D1A7;
+  --color-accent-active: #6E9F75;
+
+  --color-accent-bg: rgba(142, 189, 145, 0.12);
+  --color-accent-border: rgba(142, 189, 145, 0.35);
+
+  /* Success */
+
+  --color-success: #65C98A;
+  --color-success-bg: rgba(101, 201, 138, 0.12);
+  --color-success-border: rgba(101, 201, 138, 0.30);
+
+  /* Warning */
+
+  --color-warning: #E5B967;
+  --color-warning-bg: rgba(229, 185, 103, 0.12);
+  --color-warning-border: rgba(229, 185, 103, 0.30);
+
+  /* Danger */
+
+  --color-danger: #E47D78;
+  --color-danger-bg: rgba(228, 125, 120, 0.12);
+  --color-danger-border: rgba(228, 125, 120, 0.30);
+
+  /* Information */
+
+  --color-info: #75B9D2;
+  --color-info-bg: rgba(117, 185, 210, 0.12);
+  --color-info-border: rgba(117, 185, 210, 0.30);
+
+
+  /* =========================================
+     53–62 | UI COMPONENT COLORS
+     ========================================= */
+
+  /* Surfaces */
+
+  --color-surface: #192A21;
+  --color-surface-hover: #20362A;
+  --color-surface-active: #294332;
+  --color-surface-elevated: #203329;
+
+  /* Inputs */
+
+  --color-input-bg: #101D17;
+  --color-input-border: #35483B;
+  --color-input-hover: #49614E;
+  --color-input-focus: #8EBD91;
+  --color-input-placeholder: #748579;
+
+  /* Buttons */
+
+  --color-button-primary: #527C58;
+  --color-button-primary-hover: #648F69;
+  --color-button-primary-text: #FFFFFF;
+
+  --color-button-secondary: #26392D;
+  --color-button-secondary-hover: #324A38;
+  --color-button-secondary-text: #DCE8DC;
+
+  /* Disabled */
+
+  --color-disabled: #344139;
+  --color-disabled-text: #748078;
+
+
+  /* =========================================
+     63–68 | OVERLAYS & SHADOWS
+     ========================================= */
+
+  --color-overlay: rgba(3, 12, 8, 0.72);
+  --color-muted: rgba(255, 255, 255, 0.06);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.20);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.30);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.40);
+
+  --shadow-glow: 0 0 18px rgba(101, 201, 138, 0.12);
+
+
+  /* =========================================
+     69–72 | GRADIENTS
+     ========================================= */
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #315B43 0%,
+    #19382A 100%
+  );
+
+  --gradient-accent: linear-gradient(
+    135deg,
+    #8EBD91 0%,
+    #527C58 100%
+  );
+
+  --gradient-background: linear-gradient(
+    135deg,
+    #0B1511 0%,
+    #14251B 100%
+  );
+
+  --gradient-card: linear-gradient(
+    145deg,
+    #203329 0%,
+    #16251D 100%
+  );
+
+  /* Sidebar */
+
+  --color-sidebar-bg: #0D1913;
+  --color-sidebar-hover: #1B3023;
+  --color-sidebar-active: #254333;
+  --color-sidebar-text: #A4B2A6;
+  --color-sidebar-text-active: #C5D5BF;
+  --color-sidebar-border: #26382C;
+
+  /* Navbar */
+
+  --color-navbar-bg: #101D17;
+  --color-navbar-border: #293B30;
+
+  /* Tables */
+
+  --color-table-header: #1C3024;
+  --color-table-row: #16251D;
+  --color-table-row-hover: #20362A;
+  --color-table-border: #2B3B31;
+
+  /* Charts */
+
+  --color-chart-1: #8EBD91;
+  --color-chart-2: #36D6B0;
+  --color-chart-3: #D1A66E;
+  --color-chart-4: #75B9D2;
+  --color-chart-5: #B6CD83;
+  --color-chart-6: #D18A6C;
+
+  /* Scrollbar */
+
+  --color-scrollbar-track: #101D17;
+  --color-scrollbar-thumb: #35483B;
+  --color-scrollbar-thumb-hover: #527C58;
+
+  /* Selection */
+
+  --color-selection-bg: rgba(142, 189, 145, 0.25);
+  --color-selection-text: #FFFFFF;
+
+}
+

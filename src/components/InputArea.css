@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 5%;
+    color: var(--color-black);
+    
 }
 
 .input-area__header{
@@ -16,11 +18,15 @@
     width: 100%;
 }
 .input-area__label{
+    margin-bottom: 50px;
+    text-wrap: nowrap;
     width: 100%;
 }
 .input-area__input{
+    color: var(--color-black);
+
     border: 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--color-black);
     background-color: transparent;
     width: 100%;
     height: 100%;
@@ -28,7 +34,7 @@
 }
 .input-area__input:focus{
     border: 0;
-    outline: 2px solid var(--color-jungle);
+    outline: 2px solid var(--color-black);
 }
 .label-area__message{
     margin-top: 50px;
@@ -50,5 +56,27 @@
     cursor: pointer;
 }
 .input-area__submit-button:hover{
-    background-color: black;
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+@media (max-width: 1440px) {
+
+
+}
+@media (max-width: 1280px) {
+
+}
+@media (max-width: 1024px) {
+.label-area__message{
+    margin-top: 0;
+}
+.input-area__header{
+    flex-wrap: wrap;
+}
+}
+@media (max-width: 768px) {
+    
+}
+@media (max-width: 375px) {
+    
 }

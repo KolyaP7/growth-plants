@@ -8,9 +8,18 @@
     border-radius: var(--radius-3xl);
     background-color: var(--color-muted);
     padding: var(--space-md);
+    width: clamp(300px, 100%, 515px);
+    margin-bottom: 1%;
+    transition: all 0.3s ease;
+
 }
 .sale-plants-card__container:hover{
     scale: 1.03;
+    transition: all 0.3s ease;
+    border-color: rgba(0, 150, 136, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 150, 136, 0.3);
+    transform: translateY(-2px);
+
 }
 .sale-plants-card__image-container{
     width: 100%;

@@ -19,7 +19,7 @@ export default function InputArea(){
             </div>
             <label className="input-area__label label-area__message">
                 Message <br></br>
-                <textarea className="input-area__input" id="input-area__message" type="text"></textarea>
+                <textarea className="input-area__input" id="input-area__message"></textarea>
             </label>
             <div className="input-area__submit-button-container">
                 <button type="submit" className="input-area__submit-button" aria-multiline>Leave us a Message</button>

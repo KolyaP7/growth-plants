@@ -13,7 +13,10 @@
     height: 100%;
     color: white;
     margin: 0 !important;
-
+    margin-bottom: 1% !important;
+    min-width: 400px;
+    height: calc(var(--space-xl) * 10);
+    transition: flex 1s ease, scale 1s ease;
 }
 .plants-for-people__card-header{
     grid-row: 1 / 2;
@@ -33,15 +36,18 @@
 }
 
 .plants-for-people__card-button{
-    display: none;
+    display: flex;
     width: var(--button-width-3xs);
     height: var(--button-width-3xs);
     border-radius: var(--radius-full);
     border: 0;
-    background-color: white;
+    background-color: rgb(255 255 255 / 0);
+    color: rgb(0 0 0 / 0);
     z-index: 1;
     margin: 0 !important;
     cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s ease;
 }
 .plants-for-people__card-link{
     width: 100%;
@@ -55,12 +61,16 @@
     justify-content: center;
     z-index: 1;
     margin: 0 !important;
+
 }
 .plants-for-people__card-link:hover{
     color: white;
+
 }
 .plants-for-people__card-button:hover{
+    transition: all 0.2s ease;
     background-color: black;
+    
 }
 
 .plants-for-people__card-description-container{
@@ -169,12 +179,18 @@
 /* CARD IS HOVER */
 .plants-for-people__card-container--active{
     flex: 3;
+    scale: 1.03;
+    transition: flex 1s ease, scale 1s ease;
 }
 .plants-for-people__card-background-image--active{
     filter: grayscale(0%);
 }
 .plants-for-people__card-button--active{
+    background-color: rgb(255 255 255 / 1);
+    color: rgb(0 0 0 / 1);
     display: flex;
+    opacity: 1;
     justify-content: center;
     align-items: center;
+    transition: all 0.4s ease;
 }

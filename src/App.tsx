@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
@@ -10,6 +9,7 @@ import EncyclopediaPage_bootstrap from './pages/EncyclopediaPage.bootstrap.tsx';
 import EncyclopediaPage from './pages/EncyclopediaPage.tsx'
 import ShopPage from './pages/ShopPage.tsx'
 import LoginPage from './pages/LoginPage.tsx'
+import AccountPage from './pages/AccountPage.tsx'
 
 import ConservationAndStatus from './pages/Encyclopedia/ConservationAndStatus.tsx'
 import DevelopmentalBiology from './pages/Encyclopedia/DevelopmentalBiology.tsx'
@@ -20,20 +20,76 @@ import MorphologyPage from './pages/Encyclopedia/MorphologyPage.tsx'
 import RangeAndEcology from './pages/Encyclopedia/RangeAndEcology.tsx'
 import TaxonomyPage from './pages/Encyclopedia/TaxonomyPage.tsx'
 
-import { Route, Routes } from 'react-router'
+import type { User } from './types.tsx';
+
+
+import { Route, Routes } from 'react-router';
+import { useState } from 'react';
 
 function App() {
 
-  return (
+    const [ user, setUser ] = useState<User | null>(null);
+    const [ ColorTheme, SetColorTheme ] = useState("light");
+
+    const handleThemeButton = () => {
+            if (ColorTheme == "light") {
+                SetColorTheme("dark");
+            } else{
+                SetColorTheme("light");
+            }
+        }
+
+    const handleLogin = async (
+        login: string,
+        password: string
+    ): Promise<void> => {
+
+        try {
+
+            const response = await fetch(
+                'http://localhost:8080/api/auth/login',
+                {
+                    method: 'POST',
+
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+
+                    body: JSON.stringify({
+                        login,
+                        password
+                    })
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error('Invalid email or password');
+            }
+
+            const data: { user: User } = await response.json();
+
+            setUser(data);
+            console.log("user: ", data);
+
+        } catch (error) {
+
+            console.error('Login error:', error);
+
+            throw error;
+        }
+    };
+
+    return (
     <Routes>
         {/* MAIN PAGES */}
-        <Route path="/" element={<HomePage></HomePage>}></Route>
-        <Route path="/contacts" element={<ContactsPage></ContactsPage>}></Route>
-        <Route path="/blog" element={<BlogPage></BlogPage>}></Route>
+        <Route path="/" element={<HomePage user={user}></HomePage>}></Route>
+        <Route path="/contacts" element={<ContactsPage user={user} ColorTheme={ColorTheme}></ContactsPage>}></Route>
+        <Route path="/blog" element={<BlogPage user={user}></BlogPage>}></Route>
         <Route path="/encyclopedia" element={<EncyclopediaPage_bootstrap></EncyclopediaPage_bootstrap>}></Route>
-        <Route path="/shop" element={<ShopPage></ShopPage>}></Route>
-        <Route path="/shop" element={<ShopPage></ShopPage>}></Route>
-        <Route path="/login" element={<LoginPage></LoginPage>}></Route>
+        <Route path="/shop" element={<ShopPage user={user}></ShopPage>}></Route>
+        <Route path="/shop" element={<ShopPage user={user}></ShopPage>}></Route>
+
+        <Route path="/login" element={<LoginPage user={user} handleLogin={handleLogin}></LoginPage>}></Route>
 
         {/* Encyclopedia pages */}
         <Route path="/encyclopedia/taxonomy" element={<TaxonomyPage></TaxonomyPage>}></Route>
@@ -45,9 +101,10 @@ function App() {
         <Route path="/encyclopedia/gallery" element={<GalleryPage></GalleryPage>}></Route>
         <Route path="/encyclopedia/literature-and-sources" element={<LiteratureAndSources></LiteratureAndSources>}></Route>
 
+        <Route path="/account" element={<AccountPage user={user} ColorTheme={ColorTheme} handleThemeButton={handleThemeButton}></AccountPage>}></Route>
     </Routes>
     
-  )
+    )
 }
 
 export default App

@@ -1,11 +1,10 @@
 *{
   box-sizing: border-box;
   font-family: 'Urbanist';
-
 }
 
 body{
-  background-color: white;
+  background-color: var(--color-bg-4-body) !important;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -46,7 +45,7 @@ h6 {
   width: 95vw;
   margin: 0 auto;
   position: relative;
-  background-color: white;
+  background-color: transparent;
   padding: var(--space-xs);
   margin-top: calc(var(--space-2xl));
 }

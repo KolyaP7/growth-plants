@@ -1,5 +1,5 @@
 .HeaderLinkButton{
-    width: var(--button-width-lg);
+    width: clamp(var(--button-width-3xs), 40vw, var(--button-width-lg));
     height: var(--button-height-sm);
 }
 
@@ -15,14 +15,32 @@
     color: white;
     text-decoration: none;
     font-size: var(--font-size-lg);
+    transition: all 0.4s ease;
+
 }
 
 .HeaderLinkButton__link:hover{
     color: black;
     background-color: white;
+    transition: all 0.3s ease;
+
 }
 
 .HeaderLinkButton__link--active{
     background-color: white;
     color: black;
+}
+
+.HeaderAccountAvatar__link{
+    height: var(--button-height-sm);
+    width: var(--button-height-sm);
+    aspect-ratio: 1 / 1;
+
+    
+}
+.HeaderAccountAvatar__avatar{
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    width: 100%;
+    border-radius: var(--radius-full);
 }

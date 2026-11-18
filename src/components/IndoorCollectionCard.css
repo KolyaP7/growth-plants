@@ -6,13 +6,19 @@
     height: calc(var(--height-xs) * 4);
     position: relative;
     padding: var(--space-xl);
+    border-radius: calc(var(--font-size-xl) * 2);
+    transition: all 0.3s ease;
 }
 .indoor-collection__card-container:hover{
     scale: 1.02;
+    transition: all 0.3s ease;
+    border-color: rgba(0, 150, 136, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 150, 136, 0.6);
+    transform: translateY(-4px);
 }
 
 .indoor-collection__card-main{
-    display: none;
+    display: flex;
     grid-row: 3 / 6;
     grid-column: 1 / 2;
     height: calc(var(--height-xs) * 2);
@@ -21,7 +27,9 @@
     border: 0;
     padding: var(--space-lg);
     color: white;
+    transition: all 0.3s ease;
     z-index: 1;
+    opacity: 0;
 
 }
 .indoor-collection__card-main--active{
@@ -30,6 +38,9 @@
     justify-content: space-between;
     align-items: flex-start;
     z-index: 1;
+    opacity: 1;
+    transition: all 0.3s ease;
+
 }
 
 .indoor-collection__card-title-container{
@@ -50,10 +61,14 @@
     justify-content: flex-start;
     z-index: 1;
     font-size: calc(var(--font-size-2xl) * 2);
+    transition: all 0.3s ease;
+    
 }
 
 .indoor-collection__card-title--active{
     font-size: var(--font-size-2xl);
+    transition: all 0.3s ease;
+
 }
 .indoor-collection__card-description{
     display: flex;
@@ -62,6 +77,12 @@
     font-size: var(--font-size-md);
     text-align: left;
     z-index: 1;
+    overflow: hidden;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    transition: all 0.3s ease;
+    white-space: pre-wrap;
+    
 }
 
 .indoor-collection__card-link-container{
@@ -76,11 +97,13 @@
     background-color: transparent;
     border: var(--border-width-medium) solid white;
     border-radius: var(--radius-full);
+    transition: all 0.3s ease;
     z-index: 1;
 
 }
 .indoor-collection__card-link-container:hover{
     background-color: white;
+    transition: all 0.3s ease;
     color: black;
 }
 .indoor-collection__card-link{
@@ -93,11 +116,13 @@
     font-weight: var(--font-weight-extralight);
     width: 100%;
     height: 100%;
+    transition: all 0.3s ease;
     z-index: 1;
 
 
 }
 .indoor-collection__card-link:hover{
+    transition: all 0.3s ease;
     color: black;
 }
 
@@ -105,6 +130,8 @@
     z-index: 0;
     position: absolute;
     width: 100%;
+    border-radius: calc(var(--font-size-xl) * 2);
+    transition: all 0.3s ease;
     height: 100%;
 }
 .indoor-collection__card-image{
@@ -113,6 +140,7 @@
     object-fit: cover;
     height: 100%;
     border-radius: calc(var(--font-size-xl) * 2);
+    transition: all 0.3s ease;
     width: 100%;
 
 }

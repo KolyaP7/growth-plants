@@ -1,4 +1,5 @@
 import Header from '../components/Header.tsx';
+import SmallHeader from '../components/SmallHeader.tsx';
 import ShopTropicalPlantsButton from '../components/ShopTropicalPlantsButton.tsx';
 import PlantsForPeopleButton from '../components/PlantsForPeopleButton.tsx';
 import PlantsForPeopleCard from '../components/PlantsForPeopleCard.tsx';
@@ -6,16 +7,40 @@ import SalePlantsCard from '../components/SalePlantsCard.tsx';
 import IndoorCollectionCard from '../components/IndoorCollectionCard.tsx';
 import FooterSectionVer2 from '../components/FooterSectionVer2.tsx';
 import './HomePage.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import type { User } from '../types.tsx';
+
+interface HomePageProps{
+    user: User | null;
+}
 
 
 
-export default function HomePage(){
+export default function HomePage({user} : HomePageProps){
     // PLANTS FOR PEOPLE TABS LOGIC
     const [ ActiveTab, SetActiveTab ] = useState(0);
+    
+    const [isSmallDevice, setIsSmallDevice] = useState(
+        () => window.matchMedia('(max-width: 1700px)').matches
+    );
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(max-width: 1700px)');
+
+    function handleChange(event: MediaQueryListEvent) {
+        setIsSmallDevice(event.matches);
+    }
+
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => {
+        mediaQuery.removeEventListener('change', handleChange);
+    };
+    }, []);
+
     return (
         <>
-        <Header></Header> 
+        {isSmallDevice ? <SmallHeader user={user}></SmallHeader> : <Header user={user}></Header>}
         <section className="section hero">
             <div className="header-space"></div>
             <div className="hero__title">
@@ -64,32 +89,34 @@ export default function HomePage(){
                 </div>
             </div>
             <div className="plants-for-people__actions">
-                <PlantsForPeopleButton 
-                title="Outdoor Plant"
-                index={0}
-                setActiveTab={SetActiveTab}
-                activeTab={ActiveTab}
-                ></PlantsForPeopleButton>
-                <PlantsForPeopleButton 
-                title="Indoor Plant"
-                index={1}
-                setActiveTab={SetActiveTab}
-                activeTab={ActiveTab}>
-                </PlantsForPeopleButton>
-                <PlantsForPeopleButton
-                title="Flower Pot"
-                index={2}
-                setActiveTab={SetActiveTab}
-                activeTab={ActiveTab}
-                >
-                </PlantsForPeopleButton>
-                <PlantsForPeopleButton 
-                title="Potted Plant"
-                index={3}
-                setActiveTab={SetActiveTab}
-                activeTab={ActiveTab}
-                >
-                </PlantsForPeopleButton>
+                <div className="plants-for-people__actions-group">
+                    <PlantsForPeopleButton 
+                    title="Outdoor Plant"
+                    index={0}
+                    setActiveTab={SetActiveTab}
+                    activeTab={ActiveTab}
+                    ></PlantsForPeopleButton>
+                    <PlantsForPeopleButton 
+                    title="Indoor Plant"
+                    index={1}
+                    setActiveTab={SetActiveTab}
+                    activeTab={ActiveTab}>
+                    </PlantsForPeopleButton>
+                    <PlantsForPeopleButton
+                    title="Flower Pot"
+                    index={2}
+                    setActiveTab={SetActiveTab}
+                    activeTab={ActiveTab}
+                    >
+                    </PlantsForPeopleButton>
+                    <PlantsForPeopleButton 
+                    title="Potted Plant"
+                    index={3}
+                    setActiveTab={SetActiveTab}
+                    activeTab={ActiveTab}
+                    >
+                    </PlantsForPeopleButton>
+                </div>
                 <PlantsForPeopleButton 
                 title="See All"
                 index={4}

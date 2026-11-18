@@ -1,0 +1,159 @@
+.account-page{
+    background-color: transparent;
+    
+}
+.account-page-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 150vh;
+    background-color: var(--color-bg-1);
+}
+.account-information-field{
+    display: flex;
+    gap: 3%;
+    padding: var(--space-md);
+    border-radius: var(--radius-xl);
+    background-color: var(--color-bg-2);
+
+}
+.account-information-field__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15%;
+}
+.account-information-field__image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    overflow: hidden;
+}
+.account-information-field__image{
+    height: 90%;
+    border-radius: var(--radius-full);
+}
+.account-information-field__buttons-group{
+    display: flex;
+    gap: 2%;
+    width: 100%;
+}
+.account-information-field__buttons-group :nth-child(1){
+    background-color: var(--color-tropical-teal);
+}
+.account-information-field__buttons-group :nth-child(3){
+    background-color: var(--color-text-muted);
+}
+.account-information-field__button{
+    border: 0;
+    border-radius: var(--radius-md);
+    padding: var(--space-2xs) var(--space-lg);
+}
+.account-information-field__content-description{
+    background-color: var(--color-bright-teal);
+    color: white;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+}
+.account-information-field__content-text{
+    font-weight: var(--font-weight-black);
+    font-size: var(--font-size-lg);
+    color: var(--color-black);
+
+}
+
+/* FORM */
+.account-information-forms-container{
+    margin-top: 4%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 4%;
+}
+
+.account-information-form-field{
+    background-color: var(--color-bg-2);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    flex: 1;
+    max-width: 50%;
+}
+.account-information-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* height: 100%; */
+    gap: 30px;
+    padding: var(--space-lg);
+}
+.account-information-form-title{
+    color: var(--color-black);
+
+}
+
+.account-information-form-label{
+    display: flex;
+    flex-direction: column;
+    color: var(--color-black);
+    width: 100%;
+}
+.account-information-form-input{
+    border: 1px solid var(--color-tropical-teal);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-lg);
+    height: var(--height-2xs);
+    background-color: var(--color-bg-3-elements);
+}
+.account-information-form-button{
+    border: 1px solid var(--color-tropical-teal);
+    background-color: var(--color-tropical-teal);
+    color: var(--color-white);
+    width: clamp(var(--button-width-sm), 2vw, var(--button-width-lg));
+    padding: var(--space-xs);
+    border-radius: var(--radius-md);
+}
+.account-information-field__set-color-theme-container{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10%;
+}
+
+.account-information-field__set-color-theme-icon-container{
+    display: flex;
+    align-items: center;
+
+    background-color: var(--color-cream);
+    /* background-color: var(--color-bg-3-elements); */
+    border-radius: var(--radius-full);
+    height: calc(var(--height-xs) + 20px);
+    width: 25vw;
+    cursor: pointer;
+    transition: all 1s ease;
+
+    /* position: relative; */
+}
+.account-information-field__set-color-theme-icon{
+    width: var(--height-xs);
+    height: var(--height-xs);
+    border-radius: var(--radius-full);
+    border: 0;
+    background-color: var(--color-tropical-teal);
+    /* position: absolute; */
+}
+
+
+.account-information-field__set-color-theme-icon--white{
+    transform: translateX(0);
+    transition: all 1s ease;
+
+}
+.account-information-field__set-color-theme-icon--black{
+    transform: translateX(calc(25vw - var(--height-xs)));
+    transition: all 1s ease;
+}
