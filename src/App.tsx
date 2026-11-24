@@ -3,8 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import HomePage from './pages/HomePage.tsx'
+import PlantGuidePage from './pages/PlantGuidePage.tsx'
 import ContactsPage from './pages/ContactsPage.tsx'
 import BlogPage from './pages/BlogPage.tsx'
+import PublicationPage from './pages/PublicationPage.tsx'
 import EncyclopediaPage_bootstrap from './pages/EncyclopediaPage.bootstrap.tsx';
 import EncyclopediaPage from './pages/EncyclopediaPage.tsx'
 import ShopPage from './pages/ShopPage.tsx'
@@ -83,6 +85,7 @@ function App() {
     <Routes>
         {/* MAIN PAGES */}
         <Route path="/" element={<HomePage user={user}></HomePage>}></Route>
+        <Route path="/plant-guides/:slug" element={<PlantGuidePage />} />
         <Route path="/contacts" element={<ContactsPage user={user} ColorTheme={ColorTheme}></ContactsPage>}></Route>
         <Route path="/blog" element={<BlogPage user={user}></BlogPage>}></Route>
         <Route path="/encyclopedia" element={<EncyclopediaPage_bootstrap></EncyclopediaPage_bootstrap>}></Route>
@@ -90,6 +93,10 @@ function App() {
         <Route path="/shop" element={<ShopPage user={user}></ShopPage>}></Route>
 
         <Route path="/login" element={<LoginPage user={user} handleLogin={handleLogin}></LoginPage>}></Route>
+
+        <Route path="/blog/:slug" element={<PublicationPage />} />
+        <Route path="/encyclopedia/articles" element={<EncyclopediaPage_bootstrap archive />} />
+        <Route path="/encyclopedia/articles/:slug" element={<PublicationPage encyclopedia />} />
 
         {/* Encyclopedia pages */}
         <Route path="/encyclopedia/taxonomy" element={<TaxonomyPage></TaxonomyPage>}></Route>

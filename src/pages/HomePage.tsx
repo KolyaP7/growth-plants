@@ -1,3 +1,5 @@
+import { useLocation, useSearchParams } from 'react-router';
+import { indoorCollection, newPlants, peoplePlants, plantGuideLink, plantTabs } from '../data/homePlants.ts';
 import Header from '../components/Header.tsx';
 import SmallHeader from '../components/SmallHeader.tsx';
 import ShopTropicalPlantsButton from '../components/ShopTropicalPlantsButton.tsx';
@@ -17,9 +19,26 @@ interface HomePageProps{
 
 
 export default function HomePage({user} : HomePageProps){
-    // PLANTS FOR PEOPLE TABS LOGIC
-    const [ ActiveTab, SetActiveTab ] = useState(0);
-    
+    const [searchParams, setSearchParams] = useSearchParams();
+    const { hash } = useLocation();
+    const activeTab = plantTabs.findIndex((tab) => tab.id === searchParams.get('plants'));
+    const selectedIndex = Math.max(0, activeTab);
+    const selectedTab = plantTabs[selectedIndex].id;
+    const visibleCategories = plantTabs.filter(({ id }) => id !== 'all' && (selectedTab === 'all' || id === selectedTab));
+
+    function selectTab(index: number) {
+        setSearchParams((previous) => {
+            const next = new URLSearchParams(previous);
+            next.set('plants', plantTabs[index].id);
+            return next;
+        }, { replace: true });
+    }
+
+    useEffect(() => {
+        const section = document.getElementById(hash.slice(1));
+        section?.scrollIntoView();
+    }, [hash]);
+
     const [isSmallDevice, setIsSmallDevice] = useState(
         () => window.matchMedia('(max-width: 1700px)').matches
     );
@@ -57,13 +76,13 @@ export default function HomePage({user} : HomePageProps){
                     <p className="hero__addition-information-text">We want our visitors to be inspire to get their hands dirty</p>
                 </div>
                 <div className="hero__addition-information-selector hero__addition-information-selector-images">
-                    <img src="../../public/plant1.png" className="hero__addition-information-image"></img>
-                    <img src="../../public/plant1.png" className="hero__addition-information-image"></img>
-                    <img src="../../public/plant1.png" className="hero__addition-information-image"></img>
+                    <img src="/plant1.png" className="hero__addition-information-image"></img>
+                    <img src="/plant1.png" className="hero__addition-information-image"></img>
+                    <img src="/plant1.png" className="hero__addition-information-image"></img>
                 </div>
             </div>
         </section>
-        <section className="section plants-for-people">
+        <section id="plants-for-people" className="section plants-for-people">
             <div className="plants-for-people__header">
                 <div className="plants-for-people__information-section">
                     <h2 className="plants-for-people__title">
@@ -76,106 +95,56 @@ export default function HomePage({user} : HomePageProps){
                 <div className="plants-for-people__video-section">
                     <div className="plants-for-people__video-wrapper">
                         <video className="plants-for-people__video"
-                        src="../../public/videoHomePage.mp4"
+                        src="/videoHomePage.mp4"
                         controls></video>
                     </div>
                 </div>
                 <div className="plants-for-people__description-section">
                     <h3 className="plants-for-people__description">
                         Each plant is cared 
-                        <img className="plants-for-people__description-image" src="../../public/img1.png"></img>
+                        <img className="plants-for-people__description-image" src="/img1.png"></img>
                         for by our horticultural experts, so they are as happy as healthy as they get.
                     </h3>
                 </div>
             </div>
-            <div className="plants-for-people__actions">
+            <div className="plants-for-people__actions" aria-label="Plant categories" role="group">
                 <div className="plants-for-people__actions-group">
-                    <PlantsForPeopleButton 
-                    title="Outdoor Plant"
-                    index={0}
-                    setActiveTab={SetActiveTab}
-                    activeTab={ActiveTab}
-                    ></PlantsForPeopleButton>
-                    <PlantsForPeopleButton 
-                    title="Indoor Plant"
-                    index={1}
-                    setActiveTab={SetActiveTab}
-                    activeTab={ActiveTab}>
-                    </PlantsForPeopleButton>
-                    <PlantsForPeopleButton
-                    title="Flower Pot"
-                    index={2}
-                    setActiveTab={SetActiveTab}
-                    activeTab={ActiveTab}
-                    >
-                    </PlantsForPeopleButton>
-                    <PlantsForPeopleButton 
-                    title="Potted Plant"
-                    index={3}
-                    setActiveTab={SetActiveTab}
-                    activeTab={ActiveTab}
-                    >
-                    </PlantsForPeopleButton>
+                    {plantTabs.slice(0, -1).map((tab, index) => (
+                        <PlantsForPeopleButton
+                            key={tab.id}
+                            title={tab.title}
+                            index={index}
+                            setActiveTab={selectTab}
+                            activeTab={selectedIndex}
+                        />
+                    ))}
                 </div>
-                <PlantsForPeopleButton 
-                title="See All"
-                index={4}
-                setActiveTab={SetActiveTab}
-                activeTab={ActiveTab}
-                >
-                </PlantsForPeopleButton>
+                <PlantsForPeopleButton
+                    title="See All"
+                    index={plantTabs.length - 1}
+                    setActiveTab={selectTab}
+                    activeTab={selectedIndex}
+                />
             </div>
             <div className="plants-for-people__cards">
-                {ActiveTab === 0 && <div className="plants-for-people__cards-group">
-                    <PlantsForPeopleCard 
-                    title="Pet Friendly Plants"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis."
-                    family="Piperaceae"
-                    imgLink="../../public/plantsForPeople1.jpg"
-                    cardLink="#pet-family"
-                    ></PlantsForPeopleCard>
-                    <PlantsForPeopleCard 
-                    title="Orchids"
-                    description="Orchids are easily everyone’s favorite flowering plant. Find new orchids and orchids success items in this collection."
-                    family="Araceae"
-                    imgLink="../../public/plantsForPeople2.jpg"
-                    cardLink="#orchids"
-                    ></PlantsForPeopleCard>
-                    <PlantsForPeopleCard 
-                    title="Succulents"
-                    description="All succulents are cacti, but not all cacti are succulents. Both make low maintenance house plants."
-                    family="Moraceae"
-                    imgLink="../../public/plantsForPeople3.jpg"
-                    cardLink="#succulents"
-                    ></PlantsForPeopleCard>
-                </div>}
-                {ActiveTab === 1 && <div className="plants-for-people__cards-group">
-                    <PlantsForPeopleCard 
-                    title="Orchids"
-                    description="Orchids are easily everyone’s favorite flowering plant. Find new orchids and orchids success items in this collection."
-                    family="Araceae"
-                    imgLink="../../public/plantsForPeople2.jpg"
-                    cardLink="#orchids"
-                    ></PlantsForPeopleCard>
-                    <PlantsForPeopleCard 
-                    title="Pet Friendly Plants"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis."
-                    family="Piperaceae"
-                    imgLink="../../public/plantsForPeople1.jpg"
-                    cardLink="#pet-family"
-                    ></PlantsForPeopleCard>
-                    <PlantsForPeopleCard 
-                    title="Succulents"
-                    description="All succulents are cacti, but not all cacti are succulents. Both make low maintenance house plants."
-                    family="Moraceae"
-                    imgLink="../../public/plantsForPeople3.jpg"
-                    cardLink="#succulents"
-                    ></PlantsForPeopleCard>
-                </div>}
-                
+                {visibleCategories.map(({ id }) => (
+                    <div className="plants-for-people__cards-group" key={id}>
+                        {peoplePlants.filter((plant) => plant.tab === id).map((plant) => (
+                            <PlantsForPeopleCard
+                                key={plant.slug}
+                                title={plant.title}
+                                description={plant.description}
+                                family={plant.label}
+                                imgLink={plant.imageLink}
+                                cardLink={plantGuideLink(plant.slug)}
+                                selectedTab={selectedTab}
+                            />
+                        ))}
+                    </div>
+                ))}
             </div>
         </section>
-        <section className="section new-plants">
+        <section id="new-plants" className="section new-plants">
             <div className="new-plants__header">
                 <h1 className="new-plants__header-title">New Plants</h1>
                 <p className="new-plants__header-text">
@@ -185,63 +154,25 @@ export default function HomePage({user} : HomePageProps){
                 </p>
             </div>
             <div className="new-plants__cards">
-                <SalePlantsCard
-                title='Peperomia Plants'
-                description='Moist but well-drained'
-                price='122,056$'
-                buttonLink='#Peperomia'
-                imageLink='../../public/plantsForPeople1.jpg'></SalePlantsCard>
-                <SalePlantsCard
-                title='Fiddle-Leaf Fig'
-                description='Moist but well-drained'
-                price='162,056$'
-                buttonLink='#Peperomia'
-                imageLink='../../public/plantsForPeople2.jpg'></SalePlantsCard>
-                <SalePlantsCard
-                title='Calathea Orbifolia'
-                description='Moist but well-drained'
-                price='102,056$'
-                buttonLink='#Peperomia'
-                imageLink='../../public/plantsForPeople3.jpg'></SalePlantsCard>
+                {newPlants.map((plant) => (
+                    <SalePlantsCard key={plant.slug} {...plant} buttonLink={plantGuideLink(plant.slug)} />
+                ))}
             </div>
         </section>
-        <section className="section indoor-collection">
+        <section id="indoor-collection" className="section indoor-collection">
             <div className="indoor-collection__header">
                 <h1 className="indoor-collection__header-title">
                     Indoor Collection
                 </h1>
             </div>
             <div className="indoor-collection__cards">
-                <div className="indoor-collection__row">
-                    <IndoorCollectionCard
-                    title="Philodendron"
-                    description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.'
-                    buttonLink='#Philodendron'
-                    imageLink='../../public/plantsForPeople1.jpg'
-                    className='indoor-collection__card-1'></IndoorCollectionCard>
-                    <IndoorCollectionCard
-                    title="Calathea"
-                    description='Monstera Deliciosa brings a touch of jungle elegance to any space. Its iconic perforated leaves add texture and depth, transforming blank walls into living art. Thriving in indirect light and consistent moisture, it’s a bold choice for modern interiors.'
-                    buttonLink='#Philodendron'
-                    imageLink='../../public/plantsForPeople3.jpg'
-                    className='indoor-collection__card-2'></IndoorCollectionCard>
-                </div>
-                <div className="indoor-collection__row">
-                    <IndoorCollectionCard
-                    title="Air Purifying"
-                    description='Sansevieria, or Snake Plant, combines sculptural beauty with exceptional resilience. Its upright, sword-like leaves lend a modern edge to decor, while its air-purifying qualities enhance indoor well-being. Perfect for low-maintenance lifestyles, it thrives in varied light conditions.'
-                    buttonLink='#Philodendron'
-                    imageLink='../../public/plantsForPeople2.jpg'
-                    className='indoor-collection__card-3'></IndoorCollectionCard>
-                    <IndoorCollectionCard
-                    title="Low Light Tolerant"
-                    description='Pilea Peperomioides, affectionately known as the Chinese Money Plant, charms with its coin-shaped leaves and easygoing nature. Its unique growth pattern creates a lush, layered look in compact spaces. A favorite among plant enthusiasts for its cheerful appearance and simple care routine.'
-                    buttonLink='#Philodendron'
-                    imageLink='../../public/plantsForPeople3.jpg'
-                    className='indoor-collection__card-4'></IndoorCollectionCard>
-                </div>
-                
+                {[indoorCollection.slice(0, 2), indoorCollection.slice(2)].map((row) => (
+                    <div className="indoor-collection__row" key={row[0].slug}>
+                        {row.map((plant) => (
+                            <IndoorCollectionCard key={plant.slug} {...plant} buttonLink={plantGuideLink(plant.slug)} />
+                        ))}
+                    </div>
+                ))}
             </div>
         </section>
         <FooterSectionVer2></FooterSectionVer2>

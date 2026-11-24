@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './IndoorCollectionCard.css';
 import { useState } from 'react';
 
@@ -6,7 +7,6 @@ type IndoorCollectionCardProps = {
     description: string,
     buttonLink: string,
     imageLink: string,
-    className: string
 }
 export default function IndoorCollectionCard({title, description, buttonLink, imageLink}: IndoorCollectionCardProps){
     const [isHovered, setIsHovered] = useState(false);
@@ -15,10 +15,10 @@ export default function IndoorCollectionCard({title, description, buttonLink, im
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}>
             <div className="indoor-collection__card-link-container">
-                <a className="indoor-collection__card-link"
-                href={buttonLink}>
+                <Link className="indoor-collection__card-link"
+                to={buttonLink} aria-label={`Read about ${title}`}>
                     →
-                </a>
+                </Link>
             </div>
             <div className={`indoor-collection__card-title-container
                 ${isHovered ? '' : 'indoor-collection__card-title-container--active'}`}>

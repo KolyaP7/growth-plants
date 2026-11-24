@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './SalePlantsCard.css'
 
 type SalePlantsCardProps = {
@@ -25,8 +26,8 @@ export default function SalePlantsCard({title, description, price, buttonLink, i
             </div>
             <p className="sale-plants-card__price">{price}</p>
             <div className="sale-plants-card__button-link-container">
-                <a className="sale-plants-card__button-link"
-                href={buttonLink}>→</a>
+                <Link className="sale-plants-card__button-link"
+                to={buttonLink} aria-label={`Read about ${title}`}>→</Link>
             </div>
             <div className="sale-plants-card__button-like-container">
                 <button className="sale-plants-card__button-like">♡</button>

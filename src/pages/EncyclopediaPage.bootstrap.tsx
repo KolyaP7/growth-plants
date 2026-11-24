@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import HeaderWrapper from '../components/HeaderWrapper.tsx';
+import { Link } from 'react-router';
+import { encyclopediaArticles } from '../data/encyclopediaArticles.ts';
 import EncyclopediaHeader from '../components/EncyclopediaHeader.tsx';
 import FooterSectionVer2 from '../components/FooterSectionVer2.tsx';
 import '../fonts.css';
@@ -76,18 +77,6 @@ const categories = [
   },
 ];
 
-const articles = Array.from({ length: 6 }, (_, index) => ({
-  id: index + 1,
-  title: 'Photosynthesis: how plants turn light into life',
-  description:
-    'How the process of photosynthesis works, why it underlies almost all life on Earth, and what modern research helps us better understand its mechanisms.',
-  tags: ['#Photosynthesis', '#Chlorophyll', '#Plants'],
-  readTime: '9 min',
-  date: 'Oct 30',
-  image: '/plantsForPeople3.jpg',
-  category: 'Physiology',
-}));
-
 const articleFilters = [
   'All',
   'Systematics',
@@ -109,12 +98,12 @@ function AmountCard({ amount, title }: { amount: number; title: string }) {
   );
 }
 
-export default function EncyclopediaPage() {
+export default function EncyclopediaPage({ archive = false }) {
   const [isFocused, setIsFocused] = useState(false);
   const [activeFilter, setActiveFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const visibleArticles = articles.filter((article) => {
+  const visibleArticles = encyclopediaArticles.filter((article) => {
     const matchesFilter =
       activeFilter === 'All' || article.category === activeFilter;
     const query = searchQuery.trim().toLowerCase();
@@ -135,6 +124,7 @@ export default function EncyclopediaPage() {
       />
 
       <main className="bg-white text-dark">
+        {!archive && <>
         {/* Hero */}
         <section className="bg-light border-bottom py-5">
           <div className="container py-lg-4">
@@ -286,21 +276,35 @@ export default function EncyclopediaPage() {
           </div>
         </section>
 
+        </>}
+
         {/* Latest articles */}
         <section className="py-5">
           <div className="container">
             <div className="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 mb-4">
               <div>
-                <h2 className="fw-bold mb-1">Latest articles</h2>
+                {archive
+                  ? <h1 className="fw-bold mb-1">Encyclopedia articles</h1>
+                  : <h2 className="fw-bold mb-1">Latest articles</h2>}
                 <p className="text-secondary mb-0">
                   Current materials and research in the field of botany
                 </p>
               </div>
-              <a href="/encyclopedia/articles" className="btn btn-outline-success">
-                All articles
-              </a>
+              <Link to={archive ? '/encyclopedia' : '/encyclopedia/articles'} className="btn btn-outline-success">
+                {archive ? 'Back to encyclopedia' : 'All articles'}
+              </Link>
             </div>
 
+            {archive && (
+              <input
+                type="search"
+                className="form-control mb-3"
+                placeholder="Find articles"
+                aria-label="Search articles"
+                value={searchQuery}
+                onChange={(event) => setSearchQuery(event.target.value)}
+              />
+            )}
             <div className="d-flex flex-wrap gap-2 mb-4">
               {articleFilters.map((filter) => (
                 <button
@@ -320,12 +324,12 @@ export default function EncyclopediaPage() {
 
             <div className="row g-4">
               {visibleArticles.map((article) => (
-                <div className="col-12 col-md-6 col-lg-4" key={article.id}>
+                <div className="col-12 col-md-6 col-lg-4" key={article.slug}>
                   <article className="card h-100 border-0 shadow-sm overflow-hidden">
                     <img
-                      src={article.image}
+                      src={article.imageLink}
                       className="card-img-top"
-                      alt="Green plants"
+                      alt=""
                       style={{ height: 210, objectFit: 'cover' }}
                     />
                     <div className="card-body d-flex flex-column p-4">
@@ -333,22 +337,21 @@ export default function EncyclopediaPage() {
                         <span className="badge bg-success-subtle text-success">
                           {article.category}
                         </span>
-                        <span className="small text-secondary">
-                          {article.date}
-                        </span>
-                        <span className="small text-secondary">
-                          {article.readTime} read
-                        </span>
+                        {article.date && <span className="small text-secondary">{article.date}</span>}
                       </div>
 
-                      <h3 className="h5 fw-semibold">{article.title}</h3>
+                      <h3 className="h5 fw-semibold">
+                        <Link className="link-success stretched-link" to={article.buttonLink}>
+                          {article.title}
+                        </Link>
+                      </h3>
                       <p className="text-secondary">{article.description}</p>
 
                       <div className="d-flex flex-wrap gap-2 mt-auto">
                         {article.tags.map((tag) => (
                           <span
                             className="small text-success"
-                            key={`${article.id}-${tag}`}
+                            key={`${article.slug}-${tag}`}
                           >
                             {tag}
                           </span>
@@ -366,14 +369,6 @@ export default function EncyclopediaPage() {
               </p>
             )}
 
-            <div className="text-center mt-4">
-              <a
-                href="/encyclopedia/articles"
-                className="btn btn-success btn-lg px-5"
-              >
-                Show more articles
-              </a>
-            </div>
           </div>
         </section>
       </main>
